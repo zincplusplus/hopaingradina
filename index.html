@@ -3,9 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Styleguide — Hopa Țopa Land</title>
-  <meta name="description" content="Design system viu pentru Hopa Țopa Land.">
+  <title>Ghid de stil — Hopa Țopa Land</title>
+  <meta name="description" content="Ghid de stil viu pentru Hopa Țopa Land.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bubblegum+Sans&family=Chewy&family=DynaPuff:wght@400..700&family=Fredoka:wght@400..700&family=Lilita+One&family=Modak&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Selector de fonturi — doar pentru pagina de ghid */
+    .font-picker {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      margin-bottom: var(--space-8);
+    }
+    .font-picker__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: var(--text-base);
+      margin-bottom: var(--space-1);
+    }
+    .font-picker__desc {
+      font-size: var(--text-sm);
+      color: var(--ink-soft);
+      margin-bottom: var(--space-4);
+    }
+    .font-picker__row {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+    .font-picker__btn {
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-pill);
+      border: 2px solid var(--border);
+      background: var(--paper);
+      color: var(--ink);
+      font-size: var(--text-base);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .font-picker__btn:hover { border-color: var(--magenta); }
+    .font-picker__btn.is-active {
+      background: var(--magenta);
+      border-color: var(--magenta);
+      color: white;
+    }
+    .font-picker__sample {
+      margin-top: var(--space-6);
+      padding-top: var(--space-6);
+      border-top: 1px dashed var(--border);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 2.5rem;
+      line-height: 1.15;
+      color: var(--ink);
+    }
+    .font-picker__diacritics {
+      margin-top: var(--space-4);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: var(--text-2xl);
+      color: var(--magenta);
+      letter-spacing: 0.05em;
+    }
+    .font-picker__diacritics-label {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: var(--text-xs);
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--space-1);
+    }
+  </style>
 </head>
 <body>
 
@@ -16,12 +92,12 @@
         <span class="site-header__logo-text">Hopa Țopa Land</span>
       </a>
       <nav class="site-nav">
-        <a href="home.html">Homepage</a>
+        <a href="home.html">Pagina principală</a>
         <a href="#paleta">Paletă</a>
-        <a href="#typography">Typography</a>
+        <a href="#tipografie">Tipografie</a>
         <a href="#butoane">Butoane</a>
         <a href="#carduri">Carduri</a>
-        <a href="#form">Form</a>
+        <a href="#formular">Formular</a>
       </nav>
       <div class="site-header__actions">
         <a href="tel:+40748210054" class="icon-btn" aria-label="Telefon">
@@ -35,13 +111,33 @@
   <main class="container">
 
     <section class="sg-section">
-      <h1>Styleguide</h1>
-      <p class="lead">Design system viu pentru Hopa Țopa Land. Tot ce vezi mai jos vine din <a href="styles.css"><code>styles.css</code></a>. Specificația scrisă e în <a href="STYLEGUIDE.md">STYLEGUIDE.md</a>.</p>
+      <h1>Ghid de stil</h1>
+      <p class="lead">Ghid de stil viu pentru Hopa Țopa Land. Tot ce vezi mai jos vine din <a href="styles.css"><code>styles.css</code></a>. Specificația scrisă e în <a href="STYLEGUIDE.md">STYLEGUIDE.md</a>.</p>
+
+      <!-- Selector de fonturi -->
+      <div class="font-picker" style="margin-top: var(--space-8);">
+        <div class="font-picker__title">Probă de literă pentru titluri</div>
+        <p class="font-picker__desc">Apasă pe fiecare buton ca să vezi cum arată titlurile cu acel tip de literă. Schimbarea e doar pentru probă — alegi unul și îți păstrăm acel font pe tot siteul.</p>
+        <div class="font-picker__row">
+          <button class="font-picker__btn" data-font="Fredoka">Fredoka (actual)</button>
+          <button class="font-picker__btn" data-font="DynaPuff">DynaPuff</button>
+          <button class="font-picker__btn" data-font="Chewy">Chewy</button>
+          <button class="font-picker__btn" data-font="Modak">Modak</button>
+          <button class="font-picker__btn" data-font="Lilita One">Lilita One</button>
+          <button class="font-picker__btn" data-font="Bubblegum Sans">Bubblegum Sans</button>
+          <button class="font-picker__btn" data-font="Bagel Fat One">Bagel Fat One</button>
+        </div>
+        <div class="font-picker__sample">Și la Hopa Țopa Land sărbătorim împreună copiii din România.</div>
+        <div class="font-picker__diacritics">
+          <span class="font-picker__diacritics-label">Verifică diacriticele</span>
+          Ă Â Î Ș Ț &nbsp;·&nbsp; ă â î ș ț
+        </div>
+      </div>
     </section>
 
     <section class="sg-section" id="paleta">
-      <h2 class="sg-section__title">Paletă</h2>
-      <p class="sg-section__desc">Trei culori principale, derivate din siglă. Magenta-ul e accentul, verdele e secundar, crem-ul e patul.</p>
+      <h2 class="sg-section__title">Paletă de culori</h2>
+      <p class="sg-section__desc">Trei culori principale, derivate din siglă. Magenta-ul e accentul, verdele e secundar, crem-ul e fundalul.</p>
 
       <div class="sg-grid sg-grid--4">
         <div class="swatch" style="background: var(--magenta); color: white;">
@@ -49,84 +145,84 @@
           <span class="swatch__hex">--magenta · #E5478F</span>
         </div>
         <div class="swatch" style="background: var(--green); color: white;">
-          <span class="swatch__name">Green</span>
+          <span class="swatch__name">Verde</span>
           <span class="swatch__hex">--green · #82B440</span>
         </div>
         <div class="swatch" style="background: var(--cream); color: var(--ink);">
-          <span class="swatch__name">Cream</span>
+          <span class="swatch__name">Crem</span>
           <span class="swatch__hex">--cream · #FFF8EE</span>
         </div>
         <div class="swatch" style="background: var(--ink); color: var(--cream);">
-          <span class="swatch__name">Ink</span>
+          <span class="swatch__name">Cerneală</span>
           <span class="swatch__hex">--ink · #2E1A2A</span>
         </div>
       </div>
 
-      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Accent &amp; neutrale</h3>
+      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Variante deschise și accent</h3>
       <div class="sg-grid sg-grid--4">
         <div class="swatch" style="background: var(--magenta-soft); color: var(--magenta-dark);">
-          <span class="swatch__name">Magenta soft</span>
+          <span class="swatch__name">Magenta deschis</span>
           <span class="swatch__hex">--magenta-soft · #FCE2EE</span>
         </div>
         <div class="swatch" style="background: var(--green-soft); color: var(--green-dark);">
-          <span class="swatch__name">Green soft</span>
+          <span class="swatch__name">Verde deschis</span>
           <span class="swatch__hex">--green-soft · #E6F2D6</span>
         </div>
         <div class="swatch" style="background: var(--sun); color: var(--ink);">
-          <span class="swatch__name">Sun</span>
+          <span class="swatch__name">Soare</span>
           <span class="swatch__hex">--sun · #F5C648</span>
         </div>
         <div class="swatch" style="background: var(--paper); color: var(--ink);">
-          <span class="swatch__name">Paper</span>
+          <span class="swatch__name">Hârtie</span>
           <span class="swatch__hex">--paper · #FFFFFF</span>
         </div>
       </div>
 
-      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Image slots</h3>
-      <p class="text-muted" style="margin-bottom: var(--space-6);">Placeholder-uri pentru fotografii. Le folosim până vin pozele reale.</p>
+      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Plăci pentru poze</h3>
+      <p class="text-muted" style="margin-bottom: var(--space-6);">Locuri colorate care țin locul fotografiilor până vin pozele reale.</p>
       <div class="sg-grid sg-grid--4">
         <div class="image-slot image-slot--pink">
           <i data-lucide="image"></i>
-          <span class="image-slot__label">pink</span>
+          <span class="image-slot__label">roz</span>
         </div>
         <div class="image-slot image-slot--green">
           <i data-lucide="image"></i>
-          <span class="image-slot__label">green</span>
+          <span class="image-slot__label">verde</span>
         </div>
         <div class="image-slot image-slot--cream">
           <i data-lucide="image"></i>
-          <span class="image-slot__label">cream</span>
+          <span class="image-slot__label">crem</span>
         </div>
         <div class="image-slot image-slot--sun">
           <i data-lucide="image"></i>
-          <span class="image-slot__label">sun</span>
+          <span class="image-slot__label">soare</span>
         </div>
       </div>
     </section>
 
-    <section class="sg-section" id="typography">
-      <h2 class="sg-section__title">Typography</h2>
-      <p class="sg-section__desc">Două familii. Fredoka pentru titluri și butoane, Inter pentru body. Scala e definită cu CSS custom properties.</p>
+    <section class="sg-section" id="tipografie">
+      <h2 class="sg-section__title">Tipografie</h2>
+      <p class="sg-section__desc">Două tipuri de literă. Unul pentru titluri și butoane (cel rotund, jucăuș), unul pentru text de citit (Inter — curat și ușor de citit pe ecrane mici).</p>
 
       <div class="stack">
         <div>
-          <div class="text-muted" style="font-size: var(--text-xs);">h1 · Fredoka 600</div>
+          <div class="text-muted" style="font-size: var(--text-xs);">Titlu mare de pagină</div>
           <h1>Aniversări pe care nu le organizezi tu</h1>
         </div>
         <div>
-          <div class="text-muted" style="font-size: var(--text-xs);">h2 · Fredoka 600</div>
+          <div class="text-muted" style="font-size: var(--text-xs);">Titlu de secțiune</div>
           <h2>Trei ore, în exclusivitate</h2>
         </div>
         <div>
-          <div class="text-muted" style="font-size: var(--text-xs);">h3 · Fredoka 600</div>
+          <div class="text-muted" style="font-size: var(--text-xs);">Titlu mic de card</div>
           <h3>Pachet Standard</h3>
         </div>
         <div>
-          <div class="text-muted" style="font-size: var(--text-xs);">Lead · Inter 400, --text-lg</div>
+          <div class="text-muted" style="font-size: var(--text-xs);">Paragraf intro (puțin mai mare)</div>
           <p class="lead">Adu copilul. Restul îl facem noi. La Hopa Țopa Land plătești o singură dată și pleci cu amintiri, nu cu liste de cumpărături.</p>
         </div>
         <div>
-          <div class="text-muted" style="font-size: var(--text-xs);">Body · Inter 400, --text-base</div>
+          <div class="text-muted" style="font-size: var(--text-xs);">Paragraf normal</div>
           <p>Avem pachete pentru toate vârstele și echipa noastră de animatori personalizează petrecerea după copil. Mascote pentru cei mici, magicieni și vânători de comori pentru cei mari. Tu te relaxezi cu un Caffe Latte în spațiul dedicat părinților.</p>
         </div>
       </div>
@@ -134,7 +230,7 @@
 
     <section class="sg-section" id="butoane">
       <h2 class="sg-section__title">Butoane</h2>
-      <p class="sg-section__desc">Pill complet, mereu. Maximum un buton primary vizibil simultan. Secondary pentru opțiuni paralele, ghost pentru acțiuni minore.</p>
+      <p class="sg-section__desc">Forma e mereu de pastilă, rotunjit complet. Doar un singur buton principal (cel roz, plin) e vizibil pe un ecran. Restul sunt secundare sau discrete.</p>
 
       <h3 style="margin-bottom: var(--space-4);">Variante</h3>
       <div class="flex-row" style="margin-bottom: var(--space-12);">
@@ -148,15 +244,16 @@
 
       <h3 style="margin-bottom: var(--space-4);">Mărimi</h3>
       <div class="flex-row">
-        <a class="btn btn--primary btn--small" href="#">Small</a>
-        <a class="btn btn--primary" href="#">Default</a>
+        <a class="btn btn--primary btn--small" href="#">Mic</a>
+        <a class="btn btn--primary" href="#">Normal</a>
         <a class="btn btn--primary btn--large" href="#">
           <i data-lucide="party-popper"></i>
           <span>Rezervă petrecerea</span>
         </a>
       </div>
 
-      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Icon button</h3>
+      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Butoane cu iconiță</h3>
+      <p class="text-muted" style="margin-bottom: var(--space-4); font-size: var(--text-sm);">Pentru acțiuni rapide în antet — telefon, email, Facebook, hartă.</p>
       <div class="flex-row">
         <a class="icon-btn" href="#" aria-label="Telefon"><i data-lucide="phone"></i></a>
         <a class="icon-btn" href="#" aria-label="Email"><i data-lucide="mail"></i></a>
@@ -164,17 +261,18 @@
         <a class="icon-btn" href="#" aria-label="Hartă"><i data-lucide="map-pin"></i></a>
       </div>
 
-      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Badge-uri</h3>
+      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Etichete mici</h3>
+      <p class="text-muted" style="margin-bottom: var(--space-4); font-size: var(--text-sm);">Etichete colorate pentru a evidenția lucruri scurte — autorizație, popularitate, noutate.</p>
       <div class="flex-row">
-        <span class="badge"><i data-lucide="shield-check"></i> ISU autorizat</span>
+        <span class="badge"><i data-lucide="shield-check"></i> Autorizat ISU</span>
         <span class="badge badge--magenta"><i data-lucide="sparkles"></i> Popular</span>
         <span class="badge badge--sun"><i data-lucide="star"></i> Nou</span>
       </div>
     </section>
 
     <section class="sg-section">
-      <h2 class="sg-section__title">USP strip</h2>
-      <p class="sg-section__desc">Banda de încredere de sub hero. Patru argumente concrete: confort, siguranță, accesibilitate.</p>
+      <h2 class="sg-section__title">Bandă cu argumente</h2>
+      <p class="sg-section__desc">Banda care apare sub hero, cu patru argumente concrete de încredere: confort, siguranță, accesibilitate.</p>
 
       <div class="usp" style="border-radius: var(--radius-lg);">
         <div class="container">
@@ -196,7 +294,7 @@
             </div>
             <div class="usp__item">
               <span class="usp__icon"><i data-lucide="wifi"></i></span>
-              <span class="usp__title">Wi-Fi free</span>
+              <span class="usp__title">Wi-Fi gratuit</span>
               <span class="usp__meta">Pentru părinți</span>
             </div>
           </div>
@@ -206,7 +304,7 @@
 
     <section class="sg-section" id="carduri">
       <h2 class="sg-section__title">Carduri</h2>
-      <p class="sg-section__desc">Card de eveniment — image slot, titlu, dată, descriere, CTA. Hover ridică ușor.</p>
+      <p class="sg-section__desc">Card de eveniment — placa de poză, titlu, dată, descriere scurtă, buton. La trecerea cu mouse-ul, cardul se ridică ușor.</p>
 
       <div class="cards cards--3">
         <article class="card">
@@ -243,7 +341,7 @@
 
     <section class="sg-section">
       <h2 class="sg-section__title">Pachete</h2>
-      <p class="sg-section__desc">Două sau trei pachete, unul featured. Comparator vizual, preț mare, listă cu checkmarks verzi.</p>
+      <p class="sg-section__desc">Două sau trei pachete așezate alături, unul evidențiat. Părintele compară vizual, vede prețul mare, citește bifele verzi.</p>
 
       <div class="packages packages--3">
         <div class="package">
@@ -298,13 +396,13 @@
       </div>
 
       <p class="text-muted" style="font-size: var(--text-sm); margin-top: var(--space-6);">
-        Prețurile de mai sus sunt orientative, ca probă de design. Anca/prietenul confirmă valorile reale.
+        Prețurile de mai sus sunt orientative, ca probă de design. Proprietarul confirmă valorile reale.
       </p>
     </section>
 
-    <section class="sg-section" id="form">
+    <section class="sg-section" id="formular">
       <h2 class="sg-section__title">Formular</h2>
-      <p class="sg-section__desc">Label deasupra input-ului, focus magenta, minimum 44px înălțime pe mobil.</p>
+      <p class="sg-section__desc">Eticheta deasupra câmpului, contur roz la atingere, înălțime minimă 44px pe telefon (ca să fie ușor de apăsat cu degetul).</p>
 
       <form class="form" style="max-width: 560px;" onsubmit="event.preventDefault();">
         <div class="form__row form__row--2">
@@ -334,8 +432,8 @@
     </section>
 
     <section class="sg-section">
-      <h2 class="sg-section__title">Contact strip</h2>
-      <p class="sg-section__desc">Telefonul, adresa, programul — într-un format ușor de scanat.</p>
+      <h2 class="sg-section__title">Bandă de contact</h2>
+      <p class="sg-section__desc">Telefonul, adresa, programul — într-un format ușor de citit dintr-o privire.</p>
 
       <div class="contact-grid">
         <div class="contact-info">
@@ -386,8 +484,8 @@
         <div class="site-footer__col">
           <h4>Pagini</h4>
           <ul>
-            <li><a href="home.html">Homepage</a></li>
-            <li><a href="index.html">Styleguide</a></li>
+            <li><a href="home.html">Pagina principală</a></li>
+            <li><a href="index.html">Ghid de stil</a></li>
           </ul>
         </div>
         <div class="site-footer__col">
@@ -407,6 +505,27 @@
   </footer>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+
+    // Selectorul de fonturi — schimbă tipul de literă pentru titluri live.
+    (function () {
+      const buttons = document.querySelectorAll('.font-picker__btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const font = btn.dataset.font;
+          document.documentElement.style.setProperty(
+            '--font-display',
+            "'" + font + "', system-ui, sans-serif"
+          );
+          buttons.forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+        });
+      });
+      // Marchează fontul curent (Fredoka) ca activ inițial.
+      const active = document.querySelector('[data-font="Fredoka"]');
+      if (active) active.classList.add('is-active');
+    })();
+  </script>
 </body>
 </html>
