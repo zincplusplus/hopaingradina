@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bubblegum+Sans&family=Chewy&family=DynaPuff:wght@400..700&family=Fredoka:wght@400..700&family=Lilita+One&family=Modak&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Atma:wght@400;500;600;700&family=Baloo+2:wght@400..800&family=Comic+Neue:wght@400;700&family=DynaPuff:wght@400..700&family=Fredoka:wght@400..700&family=Nunito:wght@400..900&family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -117,15 +117,15 @@
       <!-- Selector de fonturi -->
       <div class="font-picker" style="margin-top: var(--space-8);">
         <div class="font-picker__title">Probă de literă pentru titluri</div>
-        <p class="font-picker__desc">Apasă pe fiecare buton ca să vezi cum arată titlurile cu acel tip de literă. Schimbarea e doar pentru probă — alegi unul și îți păstrăm acel font pe tot siteul.</p>
+        <p class="font-picker__desc">Apasă pe fiecare buton ca să vezi cum arată titlurile cu acel tip de literă. Am păstrat doar variante care merg bine cu diacriticele românești.</p>
         <div class="font-picker__row">
-          <button class="font-picker__btn" data-font="Fredoka">Fredoka (actual)</button>
-          <button class="font-picker__btn" data-font="DynaPuff">DynaPuff</button>
-          <button class="font-picker__btn" data-font="Chewy">Chewy</button>
-          <button class="font-picker__btn" data-font="Modak">Modak</button>
-          <button class="font-picker__btn" data-font="Lilita One">Lilita One</button>
-          <button class="font-picker__btn" data-font="Bubblegum Sans">Bubblegum Sans</button>
-          <button class="font-picker__btn" data-font="Bagel Fat One">Bagel Fat One</button>
+          <button class="font-picker__btn" data-font="DynaPuff">DynaPuff (actual)</button>
+          <button class="font-picker__btn" data-font="Fredoka">Fredoka</button>
+          <button class="font-picker__btn" data-font="Nunito">Nunito</button>
+          <button class="font-picker__btn" data-font="Quicksand">Quicksand</button>
+          <button class="font-picker__btn" data-font="Baloo 2">Baloo 2</button>
+          <button class="font-picker__btn" data-font="Atma">Atma</button>
+          <button class="font-picker__btn" data-font="Comic Neue">Comic Neue</button>
         </div>
         <div class="font-picker__sample">Și la Hopa Țopa Land sărbătorim împreună copiii din România.</div>
         <div class="font-picker__diacritics">
@@ -522,8 +522,8 @@
           btn.classList.add('is-active');
         });
       });
-      // Marchează fontul curent (Fredoka) ca activ inițial.
-      const active = document.querySelector('[data-font="Fredoka"]');
+      // Marchează fontul curent (DynaPuff) ca activ inițial.
+      const active = document.querySelector('[data-font="DynaPuff"]');
       if (active) active.classList.add('is-active');
     })();
   </script>

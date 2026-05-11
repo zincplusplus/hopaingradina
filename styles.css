@@ -3,7 +3,7 @@
  * Documented in STYLEGUIDE.md, visible in index.html.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
   /* Palette */
@@ -30,7 +30,7 @@
   --slot-sun: #FDEBC2;
 
   /* Typography */
-  --font-display: 'Fredoka', system-ui, -apple-system, sans-serif;
+  --font-display: 'DynaPuff', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
   --text-xs: 0.75rem;

@@ -44,7 +44,7 @@ Cât timp nu avem fotografii, slot-urile de imagine sunt blocuri colorate cu o i
 
 Două familii. Atât.
 
-- **Display: Fredoka** (400/500/600/700). Pentru titluri, butoane, label-uri scurte. Rotunjit, prietenos, citibil. Nu e infantil — Fredoka are corp gros și e folosit de branduri serioase. Alegerea îl pune pe Hopa Țopa în zona "warm and trusted," nu în zona "cartoon network."
+- **Display: DynaPuff** (400/500/600/700). Pentru titluri, butoane, label-uri scurte. Rotunjit, prietenos, citibil. Păstrează energia jucăușă a brandului fără să piardă lizibilitatea.
 - **Body: Inter** (400/500/600). Pentru paragrafe, navigație, formulare. Neutral, lizibil pe ecrane mici.
 
 Încărcate de la Google Fonts cu `display=swap` — paginile randerează imediat, font-ul "pică" peste când se descarcă.
