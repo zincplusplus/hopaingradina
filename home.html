@@ -17,6 +17,7 @@
       </a>
       <nav class="site-nav">
         <a href="#despre">Despre</a>
+        <a href="#galerie">Galerie</a>
         <a href="#evenimente">Evenimente</a>
         <a href="#pachete">Pachete</a>
         <a href="#contact">Contact</a>
@@ -51,9 +52,8 @@
               <a href="#pachete" class="btn btn--ghost btn--large">Vezi pachetele</a>
             </div>
           </div>
-          <div class="image-slot image-slot--pink">
-            <i data-lucide="image"></i>
-            <span class="image-slot__label">Foto spațiu de joacă</span>
+          <div class="image-slot image-slot--photo">
+            <img src="_import/spatiu-de-joaca.png" alt="Spațiu de joacă exterior cu piscină, leagăne, trambulină și zonă verde">
           </div>
         </div>
       </div>
@@ -100,6 +100,51 @@
             <h2 style="margin-top: var(--space-3); margin-bottom: var(--space-4);">Cât timp copiii sunt în largul lor, tu ești în largul tău.</h2>
             <p class="lead">Avem un spațiu separat pentru părinți, cu Caffe Latte, suc proaspăt sau un Prosecco fără alcool. Stai în liniște, vezi copiii când vrei, dar nu trebuie să gestionezi totul.</p>
             <p class="text-muted">Petrecerea durează 3 ore. Echipa noastră se ocupă de animație, decor și curățenie. Tu ai doar grijă să ajungi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="section" id="galerie">
+      <div class="container">
+        <div class="section__head">
+          <span class="badge"><i data-lucide="images"></i> Galerie</span>
+          <h2 class="section__title" style="margin-top: var(--space-3);">Momente din Hopa Topa Land</h2>
+          <p class="section__lead">Joaca, spectacole, lumini si spatii pregatite pentru petreceri memorabile.</p>
+        </div>
+
+        <div class="gallery-slider" data-gallery-slider>
+          <div class="gallery-slider__viewport">
+            <div class="gallery-slider__track">
+              <figure class="gallery-slide">
+                <img src="_import/spatiu-de-joaca.png" alt="Spatiu de joaca exterior cu piscina, leagane, trambulina si zona verde">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/galerie-petrecere-1.jpeg" alt="Spectacol pentru copii cu lumini colorate in sala de petreceri">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/galerie-petrecere-2.jpeg" alt="Moment de spectacol interactiv la o petrecere pentru copii">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/galerie-petrecere-3.jpeg" alt="Copii si animatori in sala Hopa Topa Land">
+              </figure>
+            </div>
+          </div>
+
+          <div class="gallery-slider__controls">
+            <button class="icon-btn gallery-slider__btn" type="button" data-gallery-prev aria-label="Poza anterioara">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <div class="gallery-slider__dots" aria-label="Navigare galerie">
+              <button class="gallery-slider__dot is-active" type="button" data-gallery-dot="0" aria-label="Poza 1"></button>
+              <button class="gallery-slider__dot" type="button" data-gallery-dot="1" aria-label="Poza 2"></button>
+              <button class="gallery-slider__dot" type="button" data-gallery-dot="2" aria-label="Poza 3"></button>
+              <button class="gallery-slider__dot" type="button" data-gallery-dot="3" aria-label="Poza 4"></button>
+            </div>
+            <button class="icon-btn gallery-slider__btn" type="button" data-gallery-next aria-label="Poza urmatoare">
+              <i data-lucide="chevron-right"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -338,6 +383,34 @@
   </footer>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+
+    (function () {
+      const slider = document.querySelector('[data-gallery-slider]');
+      if (!slider) return;
+
+      const track = slider.querySelector('.gallery-slider__track');
+      const slides = slider.querySelectorAll('.gallery-slide');
+      const dots = slider.querySelectorAll('[data-gallery-dot]');
+      const prev = slider.querySelector('[data-gallery-prev]');
+      const next = slider.querySelector('[data-gallery-next]');
+      let activeIndex = 0;
+
+      function showSlide(index) {
+        activeIndex = (index + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + activeIndex * 100 + '%)';
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle('is-active', dotIndex === activeIndex);
+        });
+      }
+
+      prev.addEventListener('click', () => showSlide(activeIndex - 1));
+      next.addEventListener('click', () => showSlide(activeIndex + 1));
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => showSlide(Number(dot.dataset.galleryDot)));
+      });
+    })();
+  </script>
 </body>
 </html>
