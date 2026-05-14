@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ghid de stil — Hopa Țopa Land</title>
-  <meta name="description" content="Ghid de stil viu pentru Hopa Țopa Land.">
+  <title>Ghid de stil — Hopa în Grădină</title>
+  <meta name="description" content="Ghid de stil viu pentru Hopa în Grădină.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,11 +47,11 @@
       cursor: pointer;
       transition: border-color 0.15s, background 0.15s;
     }
-    .font-picker__btn:hover { border-color: var(--magenta); }
+    .font-picker__btn:hover { border-color: var(--green); }
     .font-picker__btn.is-active {
       background: var(--magenta);
-      border-color: var(--magenta);
-      color: white;
+      border-color: var(--green);
+      color: var(--ink);
     }
     .font-picker__sample {
       margin-top: var(--space-6);
@@ -68,7 +68,7 @@
       font-family: var(--font-display);
       font-weight: 600;
       font-size: var(--text-2xl);
-      color: var(--magenta);
+      color: var(--green-dark);
       letter-spacing: 0.05em;
     }
     .font-picker__diacritics-label {
@@ -88,16 +88,16 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="index.html" class="site-header__logo">
-        <img src="_import/sigla.webp" alt="Hopa Țopa Land">
-        <span class="site-header__logo-text">Hopa Țopa Land</span>
+        <img src="_import/logo-hopa-in-gradina.png" alt="Hopa în Grădină">
+        <span class="site-header__logo-text">Hopa în Grădină</span>
       </a>
       <nav class="site-nav">
-        <a href="home.html">Pagina principală</a>
-        <a href="#paleta">Paletă</a>
-        <a href="#tipografie">Tipografie</a>
-        <a href="#butoane">Butoane</a>
-        <a href="#carduri">Carduri</a>
-        <a href="#formular">Formular</a>
+        <a href="home.html#despre">Despre noi</a>
+        <a href="home.html#oferta">Ofertă</a>
+        <a href="home.html#evenimente-scoli-gradinite">Școli și Grădinițe</a>
+        <a href="home.html#galerie">Galerie</a>
+        <a href="home.html#evenimente">Evenimente</a>
+        <a href="home.html#contact">Contact</a>
       </nav>
       <div class="site-header__actions">
         <a href="tel:+40748210054" class="icon-btn" aria-label="Telefon">
@@ -112,7 +112,7 @@
 
     <section class="sg-section">
       <h1>Ghid de stil</h1>
-      <p class="lead">Ghid de stil viu pentru Hopa Țopa Land. Tot ce vezi mai jos vine din <a href="styles.css"><code>styles.css</code></a>. Specificația scrisă e în <a href="STYLEGUIDE.md">STYLEGUIDE.md</a>.</p>
+      <p class="lead">Ghid de stil viu pentru Hopa în Grădină. Tot ce vezi mai jos vine din <a href="styles.css"><code>styles.css</code></a>. Specificația scrisă e în <a href="STYLEGUIDE.md">STYLEGUIDE.md</a>.</p>
 
       <!-- Selector de fonturi -->
       <div class="font-picker" style="margin-top: var(--space-8);">
@@ -127,7 +127,7 @@
           <button class="font-picker__btn" data-font="Atma">Atma</button>
           <button class="font-picker__btn" data-font="Comic Neue">Comic Neue</button>
         </div>
-        <div class="font-picker__sample">Și la Hopa Țopa Land sărbătorim împreună copiii din România.</div>
+        <div class="font-picker__sample">Și la Hopa în Grădină sărbătorim împreună copiii din România.</div>
         <div class="font-picker__diacritics">
           <span class="font-picker__diacritics-label">Verifică diacriticele</span>
           Ă Â Î Ș Ț &nbsp;·&nbsp; ă â î ș ț
@@ -137,44 +137,44 @@
 
     <section class="sg-section" id="paleta">
       <h2 class="sg-section__title">Paletă de culori</h2>
-      <p class="sg-section__desc">Trei culori principale, derivate din siglă. Magenta-ul e accentul, verdele e secundar, crem-ul e fundalul.</p>
+      <p class="sg-section__desc">Culori principale derivate din siglă: galben luminos, verde de grădină, crem cald și maro închis pentru contrast.</p>
 
       <div class="sg-grid sg-grid--4">
-        <div class="swatch" style="background: var(--magenta); color: white;">
-          <span class="swatch__name">Magenta</span>
-          <span class="swatch__hex">--magenta · #E5478F</span>
+        <div class="swatch" style="background: var(--magenta); color: var(--ink);">
+          <span class="swatch__name">Galben Hopa</span>
+          <span class="swatch__hex">--magenta · #FFD91A</span>
         </div>
         <div class="swatch" style="background: var(--green); color: white;">
-          <span class="swatch__name">Verde</span>
-          <span class="swatch__hex">--green · #82B440</span>
+          <span class="swatch__name">Verde grădină</span>
+          <span class="swatch__hex">--green · #3F8738</span>
         </div>
         <div class="swatch" style="background: var(--cream); color: var(--ink);">
-          <span class="swatch__name">Crem</span>
-          <span class="swatch__hex">--cream · #FFF8EE</span>
+          <span class="swatch__name">Crem cald</span>
+          <span class="swatch__hex">--cream · #FFF8D8</span>
         </div>
         <div class="swatch" style="background: var(--ink); color: var(--cream);">
-          <span class="swatch__name">Cerneală</span>
-          <span class="swatch__hex">--ink · #2E1A2A</span>
+          <span class="swatch__name">Maro închis</span>
+          <span class="swatch__hex">--ink · #183719</span>
         </div>
       </div>
 
       <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Variante deschise și accent</h3>
       <div class="sg-grid sg-grid--4">
         <div class="swatch" style="background: var(--magenta-soft); color: var(--magenta-dark);">
-          <span class="swatch__name">Magenta deschis</span>
-          <span class="swatch__hex">--magenta-soft · #FCE2EE</span>
+          <span class="swatch__name">Galben deschis</span>
+          <span class="swatch__hex">--magenta-soft · #FFF3A6</span>
         </div>
         <div class="swatch" style="background: var(--green-soft); color: var(--green-dark);">
           <span class="swatch__name">Verde deschis</span>
-          <span class="swatch__hex">--green-soft · #E6F2D6</span>
+          <span class="swatch__hex">--green-soft · #DDF2D4</span>
         </div>
         <div class="swatch" style="background: var(--sun); color: var(--ink);">
-          <span class="swatch__name">Soare</span>
-          <span class="swatch__hex">--sun · #F5C648</span>
+          <span class="swatch__name">Auriu cald</span>
+          <span class="swatch__hex">--sun · #F6B91A</span>
         </div>
         <div class="swatch" style="background: var(--paper); color: var(--ink);">
-          <span class="swatch__name">Hârtie</span>
-          <span class="swatch__hex">--paper · #FFFFFF</span>
+          <span class="swatch__name">Hârtie caldă</span>
+          <span class="swatch__hex">--paper · #FFFCED</span>
         </div>
       </div>
 
@@ -183,7 +183,7 @@
       <div class="sg-grid sg-grid--4">
         <div class="image-slot image-slot--pink">
           <i data-lucide="image"></i>
-          <span class="image-slot__label">roz</span>
+          <span class="image-slot__label">galben</span>
         </div>
         <div class="image-slot image-slot--green">
           <i data-lucide="image"></i>
@@ -219,7 +219,7 @@
         </div>
         <div>
           <div class="text-muted" style="font-size: var(--text-xs);">Paragraf intro (puțin mai mare)</div>
-          <p class="lead">Adu copilul. Restul îl facem noi. La Hopa Țopa Land plătești o singură dată și pleci cu amintiri, nu cu liste de cumpărături.</p>
+          <p class="lead">Adu copilul. Restul îl facem noi. La Hopa în Grădină plătești o singură dată și pleci cu amintiri, nu cu liste de cumpărături.</p>
         </div>
         <div>
           <div class="text-muted" style="font-size: var(--text-xs);">Paragraf normal</div>
@@ -230,7 +230,7 @@
 
     <section class="sg-section" id="butoane">
       <h2 class="sg-section__title">Butoane</h2>
-      <p class="sg-section__desc">Forma e mereu de pastilă, rotunjit complet. Doar un singur buton principal (cel roz, plin) e vizibil pe un ecran. Restul sunt secundare sau discrete.</p>
+      <p class="sg-section__desc">Forma e mereu de pastilă, rotunjit complet. Doar un singur buton principal (cel galben, plin) e vizibil pe un ecran. Restul sunt secundare sau discrete.</p>
 
       <h3 style="margin-bottom: var(--space-4);">Variante</h3>
       <div class="flex-row" style="margin-bottom: var(--space-12);">
@@ -402,7 +402,7 @@
 
     <section class="sg-section" id="formular">
       <h2 class="sg-section__title">Formular</h2>
-      <p class="sg-section__desc">Eticheta deasupra câmpului, contur roz la atingere, înălțime minimă 44px pe telefon (ca să fie ușor de apăsat cu degetul).</p>
+      <p class="sg-section__desc">Eticheta deasupra câmpului, contur galben la atingere, înălțime minimă 44px pe telefon (ca să fie ușor de apăsat cu degetul).</p>
 
       <form class="form" style="max-width: 560px;" onsubmit="event.preventDefault();">
         <div class="form__row form__row--2">
@@ -441,7 +441,10 @@
             <span class="contact-row__icon"><i data-lucide="phone"></i></span>
             <div>
               <div class="contact-row__label">Telefon</div>
-              <div class="contact-row__value"><a href="tel:+40748210054">+40 748 210 054</a></div>
+              <div class="contact-row__value">
+                <a href="tel:+40748210054">+40 748 210 054</a><br>
+                <a href="tel:+40748210045">+40 748 210 045</a>
+              </div>
             </div>
           </div>
           <div class="contact-row">
@@ -462,7 +465,7 @@
             <span class="contact-row__icon"><i data-lucide="clock"></i></span>
             <div>
               <div class="contact-row__label">Program</div>
-              <div class="contact-row__value">L–V 18:00–21:00 · S–D 10:00–21:00</div>
+              <div class="contact-row__value">L–V 14:00–21:00 · S–D 10:00–21:00</div>
             </div>
           </div>
         </div>
@@ -478,7 +481,7 @@
     <div class="container">
       <div class="site-footer__grid">
         <div class="site-footer__col">
-          <h4>Hopa Țopa Land</h4>
+          <h4>Hopa în Grădină</h4>
           <p style="color: var(--ink-muted); font-size: var(--text-sm);">Loc de joacă și spațiu de petreceri pentru copii, în București.</p>
         </div>
         <div class="site-footer__col">
@@ -491,14 +494,15 @@
         <div class="site-footer__col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="tel:+40748210054">0748 210 054</a></li>
+            <li><a href="tel:+40748210054">+40 748 210 054</a></li>
+            <li><a href="tel:+40748210045">+40 748 210 045</a></li>
             <li><a href="mailto:salut@hopatopaland.ro">salut@hopatopaland.ro</a></li>
             <li>Șos. Colentina 60A</li>
           </ul>
         </div>
       </div>
       <div class="site-footer__legal">
-        <span>© 2026 Hopa Țopa Land. Toate drepturile rezervate.</span>
+        <span>© 2026 Hopa în Grădină. Toate drepturile rezervate.</span>
         <span>Făcut cu grijă, în București.</span>
       </div>
     </div>
