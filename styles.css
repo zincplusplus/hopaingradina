@@ -509,6 +509,125 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 }
 .card__footer { margin-top: auto; }
 
+.feature-card {
+  border: 2px solid var(--green-soft);
+  box-shadow: var(--shadow-md);
+}
+.feature-card > .badge {
+  align-self: flex-start;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  background: var(--green);
+  color: var(--paper);
+}
+.feature-card > .badge.badge--sun {
+  background: var(--sun);
+  color: var(--ink);
+}
+.feature-card .card__title {
+  font-size: var(--text-2xl);
+  color: var(--green-dark);
+}
+
+.school-offer-card {
+  border: 2px solid var(--green-soft);
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  text-align: center;
+  color: var(--green-dark);
+}
+button.school-offer-card {
+  width: 100%;
+  font: inherit;
+}
+.school-offer-card i,
+.school-offer-card svg {
+  width: 42px;
+  height: 42px;
+  color: var(--green);
+  margin-bottom: var(--space-4);
+}
+.school-offer-card span {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1.15;
+}
+button.school-offer-card:hover {
+  border-color: var(--green);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.offer-modal {
+  width: min(1040px, calc(100vw - 2rem));
+  max-height: min(860px, calc(100vh - 2rem));
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.offer-modal::backdrop {
+  background: rgba(24, 55, 25, 0.58);
+  backdrop-filter: blur(4px);
+}
+.offer-modal__inner {
+  position: relative;
+  max-height: inherit;
+  overflow: auto;
+  padding: var(--space-8);
+}
+.offer-modal__close {
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+.offer-modal__close:hover {
+  background: var(--green-soft);
+  color: var(--green-dark);
+}
+.offer-modal__close i,
+.offer-modal__close svg {
+  width: 20px;
+  height: 20px;
+}
+.offer-price {
+  width: 100%;
+  margin-bottom: var(--space-4);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--green-dark);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+.offer-price span {
+  display: block;
+  margin-top: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
 /* Cards grid */
 .cards {
   display: grid;

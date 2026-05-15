@@ -71,12 +71,11 @@
         <div class="stack" style="gap: var(--space-8);">
           <div class="card">
             <p>Situat în Mogoșoaia, aproape de Castelul Brâncovenesc, locația oferă o grădină generoasă de aproximativ 1.300 mp, ideală pentru petreceri private, aniversări, evenimente de familie sau întâlniri corporate organizate exclusiv, fără alte grupuri în paralel.</p>
-            <p>Aici, fiecare eveniment este gândit astfel încât toți invitații să se bucure: copiii au libertate de mișcare și activități variate, iar adulții se pot relaxa și socializa într-un cadru natural, aerisit și prietenos.</p>
             <p>Fie că organizezi o zi specială în familie sau un eveniment de echipă, Hopa în Grădină îți oferă flexibilitatea de a crea exact experiența pe care ți-o dorești.</p>
           </div>
 
           <div class="cards cards--3">
-            <article class="card">
+            <article class="card feature-card">
               <span class="badge"><i data-lucide="sprout"></i> Facilități</span>
               <h3 class="card__title" style="margin-top: var(--space-4);">Confort, flexibilitate și experiențe complete în aer liber</h3>
               <ul class="package__features">
@@ -92,7 +91,7 @@
               <p class="text-muted">Totul este conceput pentru ca organizarea să fie simplă, iar experiența fără stres, indiferent de tipul evenimentului.</p>
             </article>
 
-            <article class="card">
+            <article class="card feature-card">
               <span class="badge badge--sun"><i data-lucide="party-popper"></i> Pentru copii</span>
               <h3 class="card__title" style="margin-top: var(--space-4);">Un spațiu unde distracția vine natural și fără griji</h3>
               <ul class="package__features">
@@ -107,7 +106,7 @@
               <p class="text-muted">Copiii pot explora, alerga și se pot bucura în siguranță, într-un mediu deschis și prietenos.</p>
             </article>
 
-            <article class="card">
+            <article class="card feature-card">
               <span class="badge"><i data-lucide="trees"></i> Pentru adulți</span>
               <h3 class="card__title" style="margin-top: var(--space-4);">Un cadru relaxant, ideal pentru socializare și conexiuni reale</h3>
               <ul class="package__features">
@@ -226,7 +225,6 @@
         <div class="hero__inner" style="margin-bottom: var(--space-12);">
           <div class="card">
             <p>Ai acces exclusiv la întreaga locație și la toate facilitățile, astfel încât să te bucuri de eveniment în ritmul tău, fără alte grupuri în paralel.</p>
-            <p>Spațiul este pregătit în prealabil, iar tu primești suport și ghidare pentru ca totul să decurgă fără griji.</p>
             <h3 class="card__title" style="margin-top: var(--space-6);">Ce include închirierea</h3>
             <ul class="package__features">
               <li><i data-lucide="check"></i> Acces complet și exclusiv la locație</li>
@@ -320,15 +318,42 @@
 
     <section class="section" id="evenimente-scoli-gradinite" style="background: var(--paper);">
       <div class="container">
+        <div class="section__head">
+          <span class="badge"><i data-lucide="school"></i> Școli și Grădinițe</span>
+          <h2 class="section__title" style="margin-top: var(--space-3);">Oferte pentru școli și grădinițe</h2>
+        </div>
+
+        <div class="cards cards--3">
+          <button class="card school-offer-card" type="button" data-open-school-offer>
+            <i data-lucide="party-popper"></i>
+            <span>Serbări școală și grădiniță</span>
+          </button>
+          <article class="card school-offer-card">
+            <i data-lucide="leaf"></i>
+            <span>Săptămâna verde</span>
+          </article>
+          <article class="card school-offer-card">
+            <i data-lucide="sparkles"></i>
+            <span>Săptămâna altfel</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="offer-modal" data-school-offer-modal aria-labelledby="school-offer-title">
+      <div class="offer-modal__inner">
+        <button class="offer-modal__close" type="button" data-close-school-offer aria-label="Închide oferta">
+          <i data-lucide="x"></i>
+        </button>
         <div class="hero__inner">
           <div>
-            <span class="badge"><i data-lucide="school"></i> Școli și Grădinițe</span>
-            <h2 class="section__title" style="margin-top: var(--space-3); margin-bottom: var(--space-4);">Oferte pentru școli și grădinițe</h2>
+            <span class="badge"><i data-lucide="school"></i> Serbări școală și grădiniță</span>
+            <h2 class="section__title" id="school-offer-title" style="margin-top: var(--space-3); margin-bottom: var(--space-4);">Oferte pentru școli și grădinițe</h2>
             <p class="lead">La Hopa în Grădină, organizăm serbări și petreceri pentru copii într-un spațiu outdoor sigur, generos și dedicat exclusiv grupului tău, unde distracția și organizarea fără stres merg mână în mână.</p>
           </div>
 
           <div class="package package--featured">
-            <span class="package__badge">160 lei / copil</span>
+            <span class="package__badge">Pachet standard</span>
             <h3 class="package__name">Pachet standard copii</h3>
             <p class="package__desc">Un pachet complet, gândit pentru ca cei mici să se bucure de experiență, iar organizatorii să nu aibă griji.</p>
             <ul class="package__features">
@@ -340,7 +365,8 @@
               <li><i data-lucide="check"></i> Personal dedicat pentru servire și suport pe durata evenimentului</li>
             </ul>
             <div class="package__cta">
-              <a href="#contact" class="btn btn--primary" style="width: 100%;">
+              <div class="offer-price">160<span>lei / copil</span></div>
+              <a href="#contact" class="btn btn--primary" style="width: 100%;" data-close-school-offer>
                 <span>Solicită oferta pentru grup</span>
                 <i data-lucide="chevron-right"></i>
               </a>
@@ -375,7 +401,7 @@
           </article>
         </div>
       </div>
-    </section>
+    </dialog>
 
     <!-- Contact -->
     <section class="section" id="contact" style="background: var(--paper);">
@@ -530,6 +556,31 @@
       next.addEventListener('click', () => showSlide(activeIndex + 1));
       dots.forEach(dot => {
         dot.addEventListener('click', () => showSlide(Number(dot.dataset.galleryDot)));
+      });
+    })();
+
+    (function () {
+      const modal = document.querySelector('[data-school-offer-modal]');
+      const openButton = document.querySelector('[data-open-school-offer]');
+      const closeButtons = document.querySelectorAll('[data-close-school-offer]');
+      if (!modal || !openButton) return;
+
+      openButton.addEventListener('click', () => {
+        if (typeof modal.showModal === 'function') {
+          modal.showModal();
+        }
+      });
+
+      closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          modal.close();
+        });
+      });
+
+      modal.addEventListener('click', event => {
+        if (event.target === modal) {
+          modal.close();
+        }
       });
     })();
   </script>
