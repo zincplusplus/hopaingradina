@@ -27,7 +27,13 @@
         <a href="tel:+40748210054" class="icon-btn" aria-label="Telefon">
           <i data-lucide="phone"></i>
         </a>
-        <a href="#contact" class="btn btn--primary btn--small">Rezervă</a>
+        <div class="site-header__cta-stack">
+          <a href="#contact" class="btn btn--primary btn--small">Rezervă</a>
+          <a href="https://hopatopaland.ro" target="_blank" rel="noopener" class="indoor-badge" aria-label="Vezi locația interioară Hopa Topa Land">
+            <img src="_import/sigla.webp" alt="Hopa Topa Land">
+            <span>Către HOPA TOPA LAND - locație interior Colentina</span>
+          </a>
+        </div>
       </div>
     </div>
   </header>
@@ -328,14 +334,14 @@
             <i data-lucide="party-popper"></i>
             <span>Serbări școală și grădiniță</span>
           </button>
-          <article class="card school-offer-card">
+          <button class="card school-offer-card" type="button" data-open-green-offer>
             <i data-lucide="leaf"></i>
             <span>Săptămâna verde</span>
-          </article>
-          <article class="card school-offer-card">
+          </button>
+          <button class="card school-offer-card" type="button" data-open-altfel-offer>
             <i data-lucide="sparkles"></i>
             <span>Săptămâna altfel</span>
-          </article>
+          </button>
         </div>
       </div>
     </section>
@@ -400,6 +406,103 @@
             </ul>
           </article>
         </div>
+      </div>
+    </dialog>
+
+    <dialog class="offer-modal" data-green-offer-modal aria-labelledby="green-offer-title">
+      <div class="offer-modal__inner">
+        <button class="offer-modal__close" type="button" data-close-green-offer aria-label="Închide oferta">
+          <i data-lucide="x"></i>
+        </button>
+        <div class="section__head">
+          <span class="badge"><i data-lucide="leaf"></i> Săptămâna verde</span>
+          <h2 class="section__title" id="green-offer-title" style="margin-top: var(--space-3);">Ateliere în natură pentru copii</h2>
+          <p class="lead">Două experiențe outdoor gândite pentru grupuri de copii: joacă, explorare și activități practice într-un spațiu verde, exclusiv pentru grupul vostru.</p>
+        </div>
+
+        <div class="cards cards--2" style="margin-top: var(--space-8);">
+          <article class="package package--featured">
+            <span class="package__badge">Atelier</span>
+            <h3 class="package__name">Grădinărit în natură</h3>
+            <p class="package__desc">Copiii descoperă rolul de mic grădinar într-un atelier practic, petrecut în aer liber.</p>
+            <ul class="package__features">
+              <li><i data-lucide="check"></i> Acces exclusiv la toate facilitățile locației pentru 4 ore</li>
+              <li><i data-lucide="check"></i> Limonadă și apă nelimitată la standul dedicat pentru copii și adulți</li>
+              <li><i data-lucide="check"></i> Meniu la alegere: 3 felii pizza sau strips cu cartofi prăjiți</li>
+              <li><i data-lucide="check"></i> Persoană dedicată pe durata evenimentului pentru suport și coordonare</li>
+              <li><i data-lucide="check"></i> La final, copiii pleacă acasă cu plantele lor în ghiveci</li>
+            </ul>
+            <div class="offer-price">130<span>lei / copil</span></div>
+          </article>
+
+          <article class="package package--featured">
+            <span class="package__badge">Atelier</span>
+            <h3 class="package__name">Căutătorii de comori din natură</h3>
+            <p class="package__desc">O aventură interactivă prin grădină, cu indicii, descoperiri și exerciții de observare a naturii.</p>
+            <ul class="package__features">
+              <li><i data-lucide="check"></i> Acces exclusiv la toate facilitățile locației pentru 4 ore</li>
+              <li><i data-lucide="check"></i> Limonadă și apă nelimitată la standul dedicat pentru copii și adulți</li>
+              <li><i data-lucide="check"></i> Meniu la alegere: 3 felii pizza sau strips cu cartofi prăjiți</li>
+              <li><i data-lucide="check"></i> Persoană dedicată pe durata evenimentului pentru suport și coordonare</li>
+              <li><i data-lucide="check"></i> La final, fiecare copil primește un mic cadou simbolic</li>
+            </ul>
+            <div class="offer-price">120<span>lei / copil</span></div>
+          </article>
+        </div>
+
+        <a href="#contact" class="btn btn--primary" style="margin-top: var(--space-8);" data-close-green-offer>
+          <span>Solicită oferta pentru Săptămâna verde</span>
+          <i data-lucide="chevron-right"></i>
+        </a>
+      </div>
+    </dialog>
+
+    <dialog class="offer-modal" data-altfel-offer-modal aria-labelledby="altfel-offer-title">
+      <div class="offer-modal__inner">
+        <button class="offer-modal__close" type="button" data-close-altfel-offer aria-label="Închide oferta">
+          <i data-lucide="x"></i>
+        </button>
+        <div class="section__head">
+          <span class="badge"><i data-lucide="sparkles"></i> Săptămâna altfel</span>
+          <h2 class="section__title" id="altfel-offer-title" style="margin-top: var(--space-3);">Ateliere active pentru copii</h2>
+          <p class="lead">Activități dinamice în aer liber, gândite pentru grupuri care vor joacă, mișcare, cooperare și experiențe memorabile în grădină.</p>
+        </div>
+
+        <div class="cards cards--2" style="margin-top: var(--space-8);">
+          <article class="package package--featured">
+            <span class="package__badge">Atelier</span>
+            <h3 class="package__name">Mini Olympics în Grădină</h3>
+            <p class="package__desc">O serie de activități dinamice și amuzante, construite în jurul mișcării, cooperării și spiritului de echipă.</p>
+            <ul class="package__features">
+              <li><i data-lucide="check"></i> Acces exclusiv la toate facilitățile locației pentru 4 ore</li>
+              <li><i data-lucide="check"></i> Limonadă și apă nelimitată la standul dedicat pentru copii și adulți</li>
+              <li><i data-lucide="check"></i> Meniu la alegere: 3 felii pizza sau strips cu cartofi prăjiți</li>
+              <li><i data-lucide="check"></i> Persoană dedicată pe durata evenimentului pentru suport și coordonare</li>
+              <li><i data-lucide="check"></i> Jocuri clasice precum curse în saci, ștafete și provocări distractive</li>
+            </ul>
+            <div class="offer-price">120<span>lei / copil</span></div>
+          </article>
+
+          <article class="package package--featured">
+            <span class="package__badge">Atelier</span>
+            <h3 class="package__name">Căutare de comori în natură</h3>
+            <p class="package__desc">O experiență dinamică ce îmbină joaca, explorarea și lucrul în echipă.</p>
+            <ul class="package__features">
+              <li><i data-lucide="check"></i> Acces exclusiv la toate facilitățile locației pentru 4 ore</li>
+              <li><i data-lucide="check"></i> Limonadă și apă nelimitată la standul dedicat pentru copii și adulți</li>
+              <li><i data-lucide="check"></i> Meniu la alegere: 3 felii pizza sau strips cu cartofi prăjiți</li>
+              <li><i data-lucide="check"></i> Persoană dedicată pe durata evenimentului pentru suport și coordonare</li>
+              <li><i data-lucide="check"></i> Căutare de comori în natură, probe amuzante pe echipe și mini-challenge-uri</li>
+              <li><i data-lucide="check"></i> La final, fiecare copil primește un mic cadou simbolic</li>
+            </ul>
+            <div class="offer-price">120<span>lei / copil</span></div>
+          </article>
+        </div>
+
+        <a href="#contact" class="btn btn--primary" style="margin-top: var(--space-8);" data-close-altfel-offer>
+          <span>Solicită oferta pentru Săptămâna altfel</span>
+          <i data-lucide="chevron-right"></i>
+        </a>
       </div>
     </dialog>
 
@@ -560,28 +663,40 @@
     })();
 
     (function () {
-      const modal = document.querySelector('[data-school-offer-modal]');
-      const openButton = document.querySelector('[data-open-school-offer]');
-      const closeButtons = document.querySelectorAll('[data-close-school-offer]');
-      if (!modal || !openButton) return;
+      const wireOfferModal = (openSelector, modalSelector, closeSelector) => {
+        const modal = document.querySelector(modalSelector);
+        const openButton = document.querySelector(openSelector);
+        const closeButtons = document.querySelectorAll(closeSelector);
+        if (!modal || !openButton) return;
 
-      openButton.addEventListener('click', () => {
-        if (typeof modal.showModal === 'function') {
-          modal.showModal();
-        }
-      });
-
-      closeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          modal.close();
+        openButton.addEventListener('click', () => {
+          if (typeof modal.showModal === 'function') {
+            modal.showModal();
+          } else {
+            modal.setAttribute('open', '');
+          }
         });
-      });
 
-      modal.addEventListener('click', event => {
-        if (event.target === modal) {
-          modal.close();
-        }
-      });
+        closeButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            if (typeof modal.close === 'function') {
+              modal.close();
+            } else {
+              modal.removeAttribute('open');
+            }
+          });
+        });
+
+        modal.addEventListener('click', event => {
+          if (event.target === modal && typeof modal.close === 'function') {
+            modal.close();
+          }
+        });
+      };
+
+      wireOfferModal('[data-open-school-offer]', '[data-school-offer-modal]', '[data-close-school-offer]');
+      wireOfferModal('[data-open-green-offer]', '[data-green-offer-modal]', '[data-close-green-offer]');
+      wireOfferModal('[data-open-altfel-offer]', '[data-altfel-offer-modal]', '[data-close-altfel-offer]');
     })();
   </script>
 </body>
