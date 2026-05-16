@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zincplusplus.github.io/hopatopaland/sitemap.xml
