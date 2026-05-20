@@ -3,721 +3,176 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hopa în Grădină Mogoșoaia | Evenimente în aer liber pentru copii și adulți</title>
-  <meta name="description" content="Hopa în Grădină este o locație de evenimente outdoor în Mogoșoaia, cu grădină de 1.300 mp pentru aniversări, serbări, petreceri private și de echipă.">
+  <title>Hopa Țopa Land · Hopa în Grădină — alege locația</title>
+  <meta name="description" content="Două locații, două experiențe. Alege Hopa Țopa Land (indoor, Colentina) sau Hopa în Grădină (outdoor, Mogoșoaia).">
   <link rel="canonical" href="https://zincplusplus.github.io/hopatopaland/">
-  <meta property="og:title" content="Hopa în Grădină Mogoșoaia | Evenimente în aer liber">
-  <meta property="og:description" content="Grădină de 1.300 mp în Mogoșoaia pentru aniversări, serbări, petreceri private, evenimente de echipă și activități pentru copii.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://zincplusplus.github.io/hopatopaland/_import/foisor-mogosoaia.jpg">
-  <meta property="og:locale" content="ro_RO">
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EventVenue",
-      "name": "Hopa în Grădină",
-      "description": "Locație de evenimente în aer liber în Mogoșoaia, cu grădină de aproximativ 1.300 mp pentru aniversări, serbări, petreceri private și evenimente de echipă.",
-      "url": "https://zincplusplus.github.io/hopatopaland/",
-      "image": "https://zincplusplus.github.io/hopatopaland/_import/foisor-mogosoaia.jpg",
-      "telephone": "+40 748 210 054",
-      "email": "salut@hopatopaland.ro",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Strada Constantin Brâncoveanu 21",
-        "addressLocality": "Mogoșoaia",
-        "addressCountry": "RO"
-      },
-      "openingHours": [
-        "Mo-Fr 14:00-21:00",
-        "Sa-Su 10:00-21:00"
-      ]
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --indoor-bg: #FFF8EE;
+      --indoor-accent: #E5478F;
+      --indoor-accent-dark: #C73679;
+      --indoor-ink: #2E1A2A;
+
+      --outdoor-bg: #FFFCED;
+      --outdoor-accent: #3F8738;
+      --outdoor-accent-dark: #214F1F;
+      --outdoor-ink: #183719;
     }
-  </script>
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; min-height: 100%; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #2E1A2A;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chooser {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    .choice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      text-decoration: none;
+      text-align: center;
+      transition: filter 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .choice:hover { filter: brightness(1.03); }
+    .choice:hover .choice__btn { transform: translateY(-2px); }
+
+    .choice--indoor {
+      background: var(--indoor-bg);
+      color: var(--indoor-ink);
+    }
+
+    .choice--outdoor {
+      background: var(--outdoor-bg);
+      color: var(--outdoor-ink);
+    }
+
+    .choice__logo {
+      max-width: 180px;
+      max-height: 120px;
+      margin-bottom: 1.5rem;
+      object-fit: contain;
+    }
+
+    .choice__label {
+      font-family: 'DynaPuff', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem;
+      line-height: 1.1;
+    }
+
+    .choice--indoor .choice__label { color: var(--indoor-accent); }
+    .choice--outdoor .choice__label { color: var(--outdoor-accent); }
+
+    .choice__sub {
+      font-size: 1rem;
+      color: inherit;
+      opacity: 0.75;
+      margin: 0 0 2rem;
+      max-width: 28ch;
+    }
+
+    .choice__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-family: 'DynaPuff', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .choice--indoor .choice__btn {
+      background: var(--indoor-accent);
+      color: #fff;
+      border: 2px solid var(--indoor-accent);
+    }
+    .choice--indoor .choice__btn:hover { background: var(--indoor-accent-dark); border-color: var(--indoor-accent-dark); }
+
+    .choice--outdoor .choice__btn {
+      background: var(--outdoor-accent);
+      color: #fff;
+      border: 2px solid var(--outdoor-accent);
+    }
+    .choice--outdoor .choice__btn:hover { background: var(--outdoor-accent-dark); border-color: var(--outdoor-accent-dark); }
+
+    .choice__meta {
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      opacity: 0.6;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .choice__chevron {
+      width: 1.1em;
+      height: 1.1em;
+    }
+
+    @media (max-width: 720px) {
+      .chooser {
+        grid-template-columns: 1fr;
+      }
+      .choice {
+        min-height: 50vh;
+        padding: 2.5rem 1.25rem;
+      }
+      .choice__label { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a href="index.html" class="site-header__logo">
-        <img src="_import/logo-hopa-in-gradina.png" alt="Hopa în Grădină">
-        <span class="site-header__logo-text">Hopa în Grădină</span>
-      </a>
-      <nav class="site-nav">
-        <a href="#despre">Despre noi</a>
-        <a href="#oferta">Ofertă</a>
-        <a href="#evenimente-scoli-gradinite">Școli și Grădinițe</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#evenimente">Evenimente</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="site-header__actions">
-        <a href="tel:+40748210054" class="icon-btn" aria-label="Telefon">
-          <i data-lucide="phone"></i>
-        </a>
-        <div class="site-header__cta-stack">
-          <a href="#contact" class="btn btn--primary btn--small">Rezervă</a>
-          <a href="https://hopatopaland.ro" target="_blank" rel="noopener" class="indoor-badge" aria-label="Vezi locația interioară Hopa Topa Land">
-            <img src="_import/sigla.webp" alt="Hopa Topa Land">
-            <span>Către HOPA TOPA LAND - locație interior Colentina</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
+  <main class="chooser">
+    <a class="choice choice--indoor" href="indoor.html" aria-label="Vezi locația Hopa Țopa Land, indoor în București Colentina">
+      <img class="choice__logo" src="_import/sigla.webp" alt="Hopa Țopa Land">
+      <h1 class="choice__label">Indoor</h1>
+      <p class="choice__sub">Hopa Țopa Land — loc de joacă și aniversări în Colentina, București.</p>
+      <span class="choice__btn">
+        <span>Intră în Indoor</span>
+        <svg class="choice__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </span>
+      <span class="choice__meta">Șos. Colentina 60A · București</span>
+    </a>
 
-  <main>
-
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero__inner">
-          <div>
-            <div class="hero__eyebrow">
-              <i data-lucide="party-popper"></i>
-              <span>Evenimente în aer liber</span>
-            </div>
-            <h1 class="hero__title">Evenimente în aer liber în Mogoșoaia pentru copii, familii și echipe.</h1>
-            <p class="hero__lead">Hopa în Grădină este un spațiu outdoor pentru aniversări, serbări, petreceri private și evenimente de echipă, creat pentru experiențe relaxate, autentice și fără stres.</p>
-            <div class="hero__ctas">
-              <a href="#contact" class="btn btn--primary btn--large">
-                <span>Rezervă acum</span>
-                <i data-lucide="chevron-right"></i>
-              </a>
-              <a href="#oferta" class="btn btn--ghost btn--large">Vezi oferta</a>
-            </div>
-          </div>
-          <div class="image-slot image-slot--photo">
-            <img src="_import/foisor-mogosoaia.jpg" alt="Foișor din lemn cu mese, zonă verde și băuturi pregătite pentru eveniment">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Despre -->
-    <section class="section" id="despre">
-      <div class="container">
-        <div class="section__head">
-          <span class="badge"><i data-lucide="leaf"></i> Despre noi</span>
-          <h2 class="section__title" style="margin-top: var(--space-3);">O grădină generoasă pentru evenimente private, aniversări și întâlniri de echipă.</h2>
-        </div>
-
-        <div class="stack" style="gap: var(--space-8);">
-          <div class="card">
-            <p>Situat în Mogoșoaia, aproape de Castelul Brâncovenesc, locația oferă o grădină generoasă de aproximativ 1.300 mp, ideală pentru petreceri private, aniversări, evenimente de familie sau întâlniri de echipă organizate exclusiv, fără alte grupuri în paralel.</p>
-            <p>Fie că organizezi o zi specială în familie sau un eveniment de echipă, Hopa în Grădină îți oferă flexibilitatea de a crea exact experiența pe care ți-o dorești.</p>
-          </div>
-
-          <div class="cards cards--3">
-            <article class="card feature-card">
-              <span class="badge"><i data-lucide="sprout"></i> Facilități</span>
-              <h3 class="card__title" style="margin-top: var(--space-4);">Confort, flexibilitate și experiențe complete în aer liber</h3>
-              <ul class="package__features">
-                <li><i data-lucide="check"></i> Grădină de aproximativ 1.300 mp</li>
-                <li><i data-lucide="check"></i> Locație dedicată exclusiv evenimentului tău</li>
-                <li><i data-lucide="check"></i> Capacitate de până la 100 de persoane</li>
-                <li><i data-lucide="check"></i> Iarbă, copaci și vie în care să se relaxeze atât adulții, cât și copiii</li>
-                <li><i data-lucide="check"></i> Mese și spații amenajate în aer liber</li>
-                <li><i data-lucide="check"></i> Acces la grătar și facilități self-catering</li>
-                <li><i data-lucide="check"></i> Zonă interioară cu bucătărie, frigider, toalete și spații de depozitare</li>
-                <li><i data-lucide="check"></i> Posibilitate de personalizare completă a evenimentului</li>
-              </ul>
-              <p class="text-muted">Totul este conceput pentru ca organizarea să fie simplă, iar experiența fără stres, indiferent de tipul evenimentului.</p>
-            </article>
-
-            <article class="card feature-card">
-              <span class="badge badge--sun"><i data-lucide="party-popper"></i> Pentru copii</span>
-              <h3 class="card__title" style="margin-top: var(--space-4);">Un spațiu unde distracția vine natural și fără griji</h3>
-              <ul class="package__features">
-                <li><i data-lucide="check"></i> Zonă de joacă special amenajată</li>
-                <li><i data-lucide="check"></i> Trambulină, leagăne și tobogan</li>
-                <li><i data-lucide="check"></i> Elemente de escaladă</li>
-                <li><i data-lucide="check"></i> Groapă cu nisip, mingi și jocuri variate</li>
-                <li><i data-lucide="check"></i> Motorete și activități interactive</li>
-                <li><i data-lucide="check"></i> Mașină de popcorn pentru doritori</li>
-                <li><i data-lucide="check"></i> O selecție vastă de extraopțiuni, de la animatori până la ateliere personalizate</li>
-              </ul>
-              <p class="text-muted">Copiii pot explora, alerga și se pot bucura în siguranță, într-un mediu deschis și prietenos.</p>
-            </article>
-
-            <article class="card feature-card">
-              <span class="badge"><i data-lucide="trees"></i> Pentru adulți</span>
-              <h3 class="card__title" style="margin-top: var(--space-4);">Un cadru relaxant, ideal pentru socializare și conexiuni reale</h3>
-              <ul class="package__features">
-                <li><i data-lucide="check"></i> Foișor generos pentru grupuri</li>
-                <li><i data-lucide="check"></i> Zone de relaxare în grădină</li>
-                <li><i data-lucide="check"></i> Mese confortabile în aer liber</li>
-                <li><i data-lucide="check"></i> Muzică ambientală</li>
-                <li><i data-lucide="check"></i> Grătar disponibil</li>
-                <li><i data-lucide="check"></i> Espressor și frigider exterior</li>
-                <li><i data-lucide="check"></i> Facilități pentru băuturi și servire</li>
-              </ul>
-              <p class="text-muted">Fie că este vorba despre o petrecere în familie sau un eveniment de echipă, atmosfera este una relaxată, perfectă pentru interacțiune naturală.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Galerie -->
-    <section class="section" id="galerie">
-      <div class="container">
-        <div class="section__head">
-          <span class="badge"><i data-lucide="images"></i> Galerie</span>
-          <h2 class="section__title" style="margin-top: var(--space-3);">Momente din Hopa în Grădină</h2>
-          <p class="section__lead">Joaca, spectacole, lumini si spatii pregatite pentru petreceri memorabile.</p>
-        </div>
-
-        <div class="gallery-slider" data-gallery-slider>
-          <div class="gallery-slider__viewport">
-            <div class="gallery-slider__track">
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-01.jpeg" alt="Foișor amenajat cu mese din lemn și decor floral">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-02.jpg" alt="Grădină cu lalele și vegetație de primăvară">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-03.jpg" alt="Copii și adulți relaxându-se pe iarbă la eveniment">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-04.jpg" alt="Invitați pe gazon, lângă foișor și trambulină">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-05.jpg" alt="Masă joasă de petrecere pregătită pe iarbă">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-06.jpg" alt="Copil relaxându-se pe puf în grădină">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-07.jpg" alt="Foișor din lemn cu bar de băuturi și mese pregătite">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-08.jpg" alt="Copil pe leagăn circular colorat în grădină">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-09.jpg" alt="Copil ținând în brațe un cățeluș la eveniment">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-10.jpg" alt="Grătar pregătit pentru invitați">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-11.jpg" alt="Copii jucându-se pe trambulină în grădină">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-12.jpeg" alt="Lalele colorate în grădina Hopa în Grădină">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-13.jpeg" alt="Zonă de picnic amenajată pe iarbă sub cer senin">
-              </figure>
-              <figure class="gallery-slide">
-                <img src="_import/galerie-mogosoaia-14.jpeg" alt="Grădină cu spațiu de joacă și zone de relaxare">
-              </figure>
-            </div>
-          </div>
-
-          <div class="gallery-slider__controls">
-            <button class="icon-btn gallery-slider__btn" type="button" data-gallery-prev aria-label="Poza anterioara">
-              <i data-lucide="chevron-left"></i>
-            </button>
-            <div class="gallery-slider__dots" aria-label="Navigare galerie">
-              <button class="gallery-slider__dot is-active" type="button" data-gallery-dot="0" aria-label="Poza 1"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="1" aria-label="Poza 2"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="2" aria-label="Poza 3"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="3" aria-label="Poza 4"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="4" aria-label="Poza 5"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="5" aria-label="Poza 6"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="6" aria-label="Poza 7"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="7" aria-label="Poza 8"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="8" aria-label="Poza 9"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="9" aria-label="Poza 10"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="10" aria-label="Poza 11"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="11" aria-label="Poza 12"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="12" aria-label="Poza 13"></button>
-              <button class="gallery-slider__dot" type="button" data-gallery-dot="13" aria-label="Poza 14"></button>
-            </div>
-            <button class="icon-btn gallery-slider__btn" type="button" data-gallery-next aria-label="Poza urmatoare">
-              <i data-lucide="chevron-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Evenimente -->
-    <div id="evenimente" aria-hidden="true"></div>
-
-    <!-- Pachete -->
-    <section class="section" id="oferta">
-      <div class="container">
-        <div class="section__head">
-          <span class="badge"><i data-lucide="gift"></i> Ofertă</span>
-          <h2 class="section__title" style="margin-top: var(--space-3);">Flexibilitate totală pentru evenimentul tău</h2>
-          <p class="section__lead">La Hopa în Grădină, organizarea evenimentului tău este gândită să fie cât mai simplă și flexibilă.</p>
-        </div>
-
-        <div class="hero__inner" style="margin-bottom: var(--space-12);">
-          <div class="card">
-            <p>Ai acces exclusiv la întreaga locație și la toate facilitățile, astfel încât să te bucuri de eveniment în ritmul tău, fără alte grupuri în paralel.</p>
-            <h3 class="card__title" style="margin-top: var(--space-6);">Ce include închirierea</h3>
-            <ul class="package__features">
-              <li><i data-lucide="check"></i> Acces complet și exclusiv la locație</li>
-              <li><i data-lucide="check"></i> Pregătirea spațiului înainte de eveniment</li>
-              <li><i data-lucide="check"></i> Stand de apă și limonadă incluse: 3 litri apă și 3 litri limonadă</li>
-              <li><i data-lucide="check"></i> Acces la grătar</li>
-              <li><i data-lucide="check"></i> Suport în organizare și recomandări</li>
-              <li><i data-lucide="check"></i> Checklist final pentru organizare fără stres</li>
-            </ul>
-          </div>
-          <div class="image-slot image-slot--photo">
-            <img src="_import/galerie-mogosoaia-11.jpg" alt="Copii jucându-se pe trambulină în grădina Hopa în Grădină">
-          </div>
-        </div>
-
-        <div class="packages packages--2">
-          <div class="package package--featured">
-            <span class="package__badge">TVA inclus</span>
-            <h3 class="package__name">Standard</h3>
-            <p class="package__desc">4 ore, cu intervale flexibile în funcție de disponibilitate.</p>
-            <div class="package__price">1.790<span class="package__price-meta">lei</span></div>
-            <ul class="package__features">
-              <li><i data-lucide="clock"></i> 10:00 – 14:00 sau 16:00 – 20:00</li>
-              <li><i data-lucide="plus"></i> Oră suplimentară: 250 lei/oră, în funcție de disponibilitate</li>
-              <li><i data-lucide="sparkles"></i> 15% discount de luni până vineri</li>
-              <li><i data-lucide="calendar-clock"></i> Intervalele pot fi personalizate la cerere</li>
-            </ul>
-            <div class="package__cta">
-              <a href="#contact" class="btn btn--primary" style="width: 100%;">
-                <span>Solicită oferta Standard</span>
-                <i data-lucide="chevron-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="package">
-            <h3 class="package__name">Toată ziua</h3>
-            <p class="package__desc">Pentru evenimente relaxate, fără grabă, între 10:00 și 20:00.</p>
-            <div class="package__price">2.990<span class="package__price-meta">lei</span></div>
-            <ul class="package__features">
-              <li><i data-lucide="clock"></i> Acces 10:00 – 20:00</li>
-              <li><i data-lucide="check"></i> Acces exclusiv la întreaga locație</li>
-              <li><i data-lucide="sparkles"></i> 15% discount de luni până vineri</li>
-              <li><i data-lucide="calendar-clock"></i> Intervalele pot fi personalizate la cerere</li>
-            </ul>
-            <div class="package__cta">
-              <a href="#contact" class="btn btn--secondary" style="width: 100%;">Solicită oferta Toată ziua</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="cards cards--2" style="margin-top: var(--space-8);">
-          <article class="card">
-            <span class="badge"><i data-lucide="utensils"></i> Self Catering</span>
-            <h3 class="card__title" style="margin-top: var(--space-4);">Organizezi exact cum îți dorești</h3>
-            <p>La Hopa în Grădină, ai libertatea de a organiza evenimentul exact așa cum îți dorești.</p>
-            <p>Poți aduce mâncarea, băuturile, tortul și decorațiunile.</p>
-            <ul class="package__features">
-              <li><i data-lucide="check"></i> Frigidere interior și exterior</li>
-              <li><i data-lucide="check"></i> Foișor și mese</li>
-              <li><i data-lucide="check"></i> Grătar</li>
-              <li><i data-lucide="check"></i> Espressor</li>
-              <li><i data-lucide="check"></i> Dozator apă și limonadă</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <span class="badge badge--sun"><i data-lucide="sparkles"></i> Pachet complet</span>
-            <h3 class="card__title" style="margin-top: var(--space-4);">Fără griji</h3>
-            <p>Dacă preferi să nu te ocupi de organizare, îți putem crea un pachet personalizat.</p>
-            <ul class="package__features">
-              <li><i data-lucide="check"></i> Catering pentru adulți și copii</li>
-              <li><i data-lucide="check"></i> Băuturi și bar</li>
-              <li><i data-lucide="check"></i> Veselă și servicii complete</li>
-              <li><i data-lucide="check"></i> Decoruri tematice</li>
-              <li><i data-lucide="check"></i> Entertainment</li>
-              <li><i data-lucide="check"></i> Personal pentru servire și debarasare</li>
-            </ul>
-            <p class="text-muted">Colaborăm cu furnizori verificați și adaptăm fiecare detaliu astfel încât evenimentul tău să fie exact cum ți-l imaginezi.</p>
-          </article>
-        </div>
-
-        <div class="flex-row" style="justify-content: center; margin-top: var(--space-8);">
-          <a href="#contact" class="btn btn--primary">
-            <span>Solicită ofertă</span>
-            <i data-lucide="chevron-right"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="evenimente-scoli-gradinite" style="background: var(--paper);">
-      <div class="container">
-        <div class="section__head">
-          <span class="badge"><i data-lucide="school"></i> Școli și Grădinițe</span>
-          <h2 class="section__title" style="margin-top: var(--space-3);">Oferte pentru școli și grădinițe</h2>
-        </div>
-
-        <div class="cards cards--3">
-          <button class="card school-offer-card" type="button" data-open-school-offer>
-            <i data-lucide="party-popper"></i>
-            <span>Serbări școală și grădiniță</span>
-          </button>
-          <button class="card school-offer-card" type="button" data-open-green-offer>
-            <i data-lucide="leaf"></i>
-            <span>Săptămâna verde</span>
-          </button>
-          <button class="card school-offer-card" type="button" data-open-altfel-offer>
-            <i data-lucide="sparkles"></i>
-            <span>Săptămâna altfel</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <dialog class="offer-modal" data-school-offer-modal aria-labelledby="school-offer-title">
-      <div class="offer-modal__inner">
-        <button class="offer-modal__close" type="button" data-close-school-offer aria-label="Închide oferta">
-          <i data-lucide="x"></i>
-        </button>
-        <div class="hero__inner">
-          <div>
-            <span class="badge"><i data-lucide="school"></i> Serbări școală și grădiniță</span>
-            <h2 class="section__title" id="school-offer-title" style="margin-top: var(--space-3); margin-bottom: var(--space-4);">Oferte pentru școli și grădinițe</h2>
-            <p class="lead">La Hopa în Grădină, organizăm serbări și petreceri pentru copii într-un spațiu outdoor sigur, generos și dedicat exclusiv grupului tău, unde distracția și organizarea fără stres merg mână în mână.</p>
-          </div>
-
-          <div class="package package--featured">
-            <span class="package__badge">Pachet standard</span>
-            <h3 class="package__name">Pachet standard copii</h3>
-            <p class="package__desc">Un pachet complet, gândit pentru ca cei mici să se bucure de experiență, iar organizatorii să nu aibă griji.</p>
-            <ul class="package__features">
-              <li><i data-lucide="check"></i> Acces la locație pentru 4 ore, exclusiv</li>
-              <li><i data-lucide="check"></i> Limonadă și apă nelimitată, cu stand dedicat</li>
-              <li><i data-lucide="check"></i> 1 suc pentru fiecare copil</li>
-              <li><i data-lucide="check"></i> Meniu la alegere: 3 felii pizza sau strips cu cartofi prăjiți</li>
-              <li><i data-lucide="check"></i> 1 înghețată pentru fiecare copil</li>
-              <li><i data-lucide="check"></i> Personal dedicat pentru servire și suport pe durata evenimentului</li>
-            </ul>
-            <div class="package__cta">
-              <div class="offer-price">160<span>lei / copil</span></div>
-              <a href="#contact" class="btn btn--primary" style="width: 100%;" data-close-school-offer>
-                <span>Solicită oferta pentru grup</span>
-                <i data-lucide="chevron-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="cards cards--2" style="margin-top: var(--space-8);">
-          <article class="card">
-            <span class="badge"><i data-lucide="users"></i> Adulți opțional</span>
-            <h3 class="card__title" style="margin-top: var(--space-4);">Pachet suplimentar pentru extra confort</h3>
-            <p>Participarea adulților nu presupune taxă per persoană. Aceștia beneficiază de acces în locație și la standul de apă și limonadă.</p>
-            <p>Pentru extra confort, se poate opta pentru un pachet suplimentar.</p>
-            <ul class="package__features">
-              <li><i data-lucide="check"></i> Mix de băuturi din gama Cola, câte 2 de adult</li>
-              <li><i data-lucide="check"></i> Cafea la espressor</li>
-              <li><i data-lucide="check"></i> Meniu la alegere: mix pizza sau platou finger food diversificat</li>
-            </ul>
-            <div class="package__price" style="font-size: var(--text-2xl);">70<span class="package__price-meta">lei / adult, opțional</span></div>
-          </article>
-
-          <article class="card">
-            <span class="badge badge--sun"><i data-lucide="sparkles"></i> Extra opționale</span>
-            <h3 class="card__title" style="margin-top: var(--space-4);">La cerere, pentru un eveniment și mai special</h3>
-            <ul class="package__features">
-              <li><i data-lucide="check"></i> Animator: 35 lei/copil, 1h30</li>
-              <li><i data-lucide="check"></i> Magician</li>
-              <li><i data-lucide="check"></i> Locuri de joacă gonflabile</li>
-              <li><i data-lucide="check"></i> Mașină de vată de zahăr</li>
-              <li><i data-lucide="check"></i> Programe tematice pentru copii</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </dialog>
-
-    <dialog class="offer-modal" data-green-offer-modal aria-labelledby="green-offer-title">
-      <div class="offer-modal__inner">
-        <button class="offer-modal__close" type="button" data-close-green-offer aria-label="Închide oferta">
-          <i data-lucide="x"></i>
-        </button>
-        <div class="section__head">
-          <span class="badge"><i data-lucide="leaf"></i> Săptămâna verde</span>
-          <h2 class="section__title" id="green-offer-title" style="margin-top: var(--space-3);">Ateliere în natură pentru copii</h2>
-          <p class="lead">Două experiențe outdoor gândite pentru grupuri de copii: joacă, explorare și activități practice într-un spațiu verde, exclusiv pentru grupul vostru.</p>
-        </div>
-
-        <div class="cards cards--2" style="margin-top: var(--space-8);">
-          <article class="package package--featured">
-            <span class="package__badge">Atelier</span>
-            <h3 class="package__name">Grădinărit în natură</h3>
-            <p class="package__desc">Copiii descoperă rolul de mic grădinar într-un atelier practic, petrecut în aer liber.</p>
-            <ul class="package__features">
-              <li><i data-lucide="check"></i> Acces exclusiv la toate facilitățile locației pentru 4 ore</li>
-              <li><i data-lucide="check"></i> Limonadă și apă nelimitată la standul dedicat pentru copii și adulți</li>
-              <li><i data-lucide="check"></i> Meniu la alegere: 3 felii pizza sau strips cu cartofi prăjiți</li>
-              <li><i data-lucide="check"></i> Persoană dedicată pe durata evenimentului pentru suport și coordonare</li>
-              <li><i data-lucide="check"></i> La final, copiii pleacă acasă cu plantele lor în ghiveci</li>
-            </ul>
-            <div class="offer-price">130<span>lei / copil</span></div>
-          </article>
-
-          <article class="package package--featured">
-            <span class="package__badge">Atelier</span>
-            <h3 class="package__name">Căutătorii de comori din natură</h3>
-            <p class="package__desc">O aventură interactivă prin grădină, cu indicii, descoperiri și exerciții de observare a naturii.</p>
-            <ul class="package__features">
-              <li><i data-lucide="check"></i> Acces exclusiv la toate facilitățile locației pentru 4 ore</li>
-              <li><i data-lucide="check"></i> Limonadă și apă nelimitată la standul dedicat pentru copii și adulți</li>
-              <li><i data-lucide="check"></i> Meniu la alegere: 3 felii pizza sau strips cu cartofi prăjiți</li>
-              <li><i data-lucide="check"></i> Persoană dedicată pe durata evenimentului pentru suport și coordonare</li>
-              <li><i data-lucide="check"></i> La final, fiecare copil primește un mic cadou simbolic</li>
-            </ul>
-            <div class="offer-price">120<span>lei / copil</span></div>
-          </article>
-        </div>
-
-        <a href="#contact" class="btn btn--primary" style="margin-top: var(--space-8);" data-close-green-offer>
-          <span>Solicită oferta pentru Săptămâna verde</span>
-          <i data-lucide="chevron-right"></i>
-        </a>
-      </div>
-    </dialog>
-
-    <dialog class="offer-modal" data-altfel-offer-modal aria-labelledby="altfel-offer-title">
-      <div class="offer-modal__inner">
-        <button class="offer-modal__close" type="button" data-close-altfel-offer aria-label="Închide oferta">
-          <i data-lucide="x"></i>
-        </button>
-        <div class="section__head">
-          <span class="badge"><i data-lucide="sparkles"></i> Săptămâna altfel</span>
-          <h2 class="section__title" id="altfel-offer-title" style="margin-top: var(--space-3);">Ateliere active pentru copii</h2>
-          <p class="lead">Activități dinamice în aer liber, gândite pentru grupuri care vor joacă, mișcare, cooperare și experiențe memorabile în grădină.</p>
-        </div>
-
-        <div class="cards cards--2" style="margin-top: var(--space-8);">
-          <article class="package package--featured">
-            <span class="package__badge">Atelier</span>
-            <h3 class="package__name">Mini Olympics în Grădină</h3>
-            <p class="package__desc">O serie de activități dinamice și amuzante, construite în jurul mișcării, cooperării și spiritului de echipă.</p>
-            <ul class="package__features">
-              <li><i data-lucide="check"></i> Acces exclusiv la toate facilitățile locației pentru 4 ore</li>
-              <li><i data-lucide="check"></i> Limonadă și apă nelimitată la standul dedicat pentru copii și adulți</li>
-              <li><i data-lucide="check"></i> Meniu la alegere: 3 felii pizza sau strips cu cartofi prăjiți</li>
-              <li><i data-lucide="check"></i> Persoană dedicată pe durata evenimentului pentru suport și coordonare</li>
-              <li><i data-lucide="check"></i> Jocuri clasice precum curse în saci, ștafete și provocări distractive</li>
-            </ul>
-            <div class="offer-price">120<span>lei / copil</span></div>
-          </article>
-
-          <article class="package package--featured">
-            <span class="package__badge">Atelier</span>
-            <h3 class="package__name">Căutare de comori în natură</h3>
-            <p class="package__desc">O experiență dinamică ce îmbină joaca, explorarea și lucrul în echipă.</p>
-            <ul class="package__features">
-              <li><i data-lucide="check"></i> Acces exclusiv la toate facilitățile locației pentru 4 ore</li>
-              <li><i data-lucide="check"></i> Limonadă și apă nelimitată la standul dedicat pentru copii și adulți</li>
-              <li><i data-lucide="check"></i> Meniu la alegere: 3 felii pizza sau strips cu cartofi prăjiți</li>
-              <li><i data-lucide="check"></i> Persoană dedicată pe durata evenimentului pentru suport și coordonare</li>
-              <li><i data-lucide="check"></i> Căutare de comori în natură, probe amuzante pe echipe și mini-challenge-uri</li>
-              <li><i data-lucide="check"></i> La final, fiecare copil primește un mic cadou simbolic</li>
-            </ul>
-            <div class="offer-price">120<span>lei / copil</span></div>
-          </article>
-        </div>
-
-        <a href="#contact" class="btn btn--primary" style="margin-top: var(--space-8);" data-close-altfel-offer>
-          <span>Solicită oferta pentru Săptămâna altfel</span>
-          <i data-lucide="chevron-right"></i>
-        </a>
-      </div>
-    </dialog>
-
-    <!-- Contact -->
-    <section class="section" id="contact" style="background: var(--paper);">
-      <div class="container">
-        <div class="section__head" style="text-align: center; margin-left: auto; margin-right: auto;">
-          <h2 class="section__title">Hai să planificăm petrecerea</h2>
-          <p class="section__lead">Scrie-ne ziua dorită și vârsta copilului. Răspundem în maximum 24 de ore, cu disponibilitate și ofertă personalizată.</p>
-        </div>
-
-        <div class="contact-grid">
-          <form class="form" onsubmit="event.preventDefault(); alert('Mulțumim! Te contactăm în curând.');">
-            <div class="form__row form__row--2">
-              <div class="form__field">
-                <label class="form__label" for="nume">Nume și prenume</label>
-                <input class="form__input" id="nume" name="nume" type="text" required placeholder="Maria Ionescu">
-              </div>
-              <div class="form__field">
-                <label class="form__label" for="telefon">Telefon</label>
-                <input class="form__input" id="telefon" name="telefon" type="tel" required placeholder="07xx xxx xxx">
-              </div>
-            </div>
-            <div class="form__field">
-              <label class="form__label" for="email">Email</label>
-              <input class="form__input" id="email" name="email" type="email" required placeholder="maria@email.com">
-            </div>
-            <div class="form__field">
-              <label class="form__label" for="data">Data preferată</label>
-              <input class="form__input" id="data" name="data" type="date">
-            </div>
-            <div class="form__field">
-              <label class="form__label" for="mesaj">Mesaj</label>
-              <textarea class="form__textarea" id="mesaj" name="mesaj" placeholder="Vârsta copilului, număr aproximativ de invitați, întrebări..."></textarea>
-              <span class="form__hint">Răspundem în maximum 24 de ore.</span>
-            </div>
-            <button class="btn btn--primary btn--large" type="submit">
-              <span>Trimite cererea</span>
-              <i data-lucide="send"></i>
-            </button>
-          </form>
-
-          <div class="contact-info">
-            <div class="contact-row">
-              <span class="contact-row__icon"><i data-lucide="phone"></i></span>
-              <div>
-                <div class="contact-row__label">Telefon</div>
-                <div class="contact-row__value">
-                  <a href="tel:+40748210054">+40 748 210 054</a><br>
-                  <a href="tel:+40748210045">+40 748 210 045</a>
-                </div>
-              </div>
-            </div>
-            <div class="contact-row">
-              <span class="contact-row__icon"><i data-lucide="mail"></i></span>
-              <div>
-                <div class="contact-row__label">Email</div>
-                <div class="contact-row__value"><a href="mailto:salut@hopatopaland.ro">salut@hopatopaland.ro</a></div>
-              </div>
-            </div>
-            <div class="contact-row">
-              <span class="contact-row__icon"><i data-lucide="map-pin"></i></span>
-              <div>
-                <div class="contact-row__label">Adresă</div>
-                <div class="contact-row__value">Strada Constantin Brâncoveanu 21, Mogoșoaia</div>
-              </div>
-            </div>
-            <div class="contact-row">
-              <span class="contact-row__icon"><i data-lucide="clock"></i></span>
-              <div>
-                <div class="contact-row__label">Program</div>
-                <div class="contact-row__value">L–V 14:00–21:00<br>S–D 10:00–21:00</div>
-              </div>
-            </div>
-            <div class="map-slot" style="margin-top: var(--space-4);">
-              <iframe
-                title="Harta Hopa în Grădină - Strada Constantin Brâncoveanu 21, Mogoșoaia"
-                src="https://www.google.com/maps?q=Strada%20Constantin%20Brancoveanu%2021%2C%20Mogosoaia&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <a class="choice choice--outdoor" href="outdoor.html" aria-label="Vezi locația Hopa în Grădină, outdoor în Mogoșoaia">
+      <img class="choice__logo" src="_import/logo-hopa-in-gradina.png" alt="Hopa în Grădină">
+      <h1 class="choice__label">Outdoor</h1>
+      <p class="choice__sub">Hopa în Grădină — evenimente în aer liber pe 1.300 mp în Mogoșoaia.</p>
+      <span class="choice__btn">
+        <span>Intră în Outdoor</span>
+        <svg class="choice__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </span>
+      <span class="choice__meta">Str. C. Brâncoveanu 21 · Mogoșoaia</span>
+    </a>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="site-footer__grid">
-        <div class="site-footer__col">
-          <h4>Hopa în Grădină</h4>
-          <p style="color: var(--ink-muted); font-size: var(--text-sm);">Spațiu de evenimente în aer liber pentru copii și adulți, în Mogoșoaia.</p>
-        </div>
-        <div class="site-footer__col">
-          <h4>Pagini</h4>
-          <ul>
-            <li><a href="#despre">Despre</a></li>
-            <li><a href="#evenimente">Evenimente</a></li>
-            <li><a href="#oferta">Ofertă evenimente</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="site-footer__col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="tel:+40748210054">+40 748 210 054</a></li>
-            <li><a href="tel:+40748210045">+40 748 210 045</a></li>
-            <li><a href="mailto:salut@hopatopaland.ro">salut@hopatopaland.ro</a></li>
-            <li>Strada Constantin Brâncoveanu 21, Mogoșoaia</li>
-          </ul>
-        </div>
-      </div>
-      <div class="site-footer__legal">
-        <span>© 2026 Hopa în Grădină. Toate drepturile rezervate.</span>
-        <span>Făcut cu grijă, în București.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script>
-    lucide.createIcons();
-
-    (function () {
-      const slider = document.querySelector('[data-gallery-slider]');
-      if (!slider) return;
-
-      const track = slider.querySelector('.gallery-slider__track');
-      const slides = slider.querySelectorAll('.gallery-slide');
-      const dots = slider.querySelectorAll('[data-gallery-dot]');
-      const prev = slider.querySelector('[data-gallery-prev]');
-      const next = slider.querySelector('[data-gallery-next]');
-      let activeIndex = 0;
-
-      function showSlide(index) {
-        activeIndex = (index + slides.length) % slides.length;
-        track.style.transform = 'translateX(-' + activeIndex * 100 + '%)';
-        dots.forEach((dot, dotIndex) => {
-          dot.classList.toggle('is-active', dotIndex === activeIndex);
-        });
-      }
-
-      prev.addEventListener('click', () => showSlide(activeIndex - 1));
-      next.addEventListener('click', () => showSlide(activeIndex + 1));
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => showSlide(Number(dot.dataset.galleryDot)));
-      });
-    })();
-
-    (function () {
-      const wireOfferModal = (openSelector, modalSelector, closeSelector) => {
-        const modal = document.querySelector(modalSelector);
-        const openButton = document.querySelector(openSelector);
-        const closeButtons = document.querySelectorAll(closeSelector);
-        if (!modal || !openButton) return;
-
-        openButton.addEventListener('click', () => {
-          if (typeof modal.showModal === 'function') {
-            modal.showModal();
-          } else {
-            modal.setAttribute('open', '');
-          }
-        });
-
-        closeButtons.forEach(button => {
-          button.addEventListener('click', () => {
-            if (typeof modal.close === 'function') {
-              modal.close();
-            } else {
-              modal.removeAttribute('open');
-            }
-          });
-        });
-
-        modal.addEventListener('click', event => {
-          if (event.target === modal && typeof modal.close === 'function') {
-            modal.close();
-          }
-        });
-      };
-
-      wireOfferModal('[data-open-school-offer]', '[data-school-offer-modal]', '[data-close-school-offer]');
-      wireOfferModal('[data-open-green-offer]', '[data-green-offer-modal]', '[data-close-green-offer]');
-      wireOfferModal('[data-open-altfel-offer]', '[data-altfel-offer-modal]', '[data-close-altfel-offer]');
-    })();
-  </script>
 </body>
 </html>
