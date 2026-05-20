@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ghid de stil — Hopa în Grădină</title>
+  <meta name="description" content="Ghid de stil viu pentru Hopa în Grădină, locația outdoor din Mogoșoaia.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atma:wght@400;500;600;700&family=Baloo+2:wght@400..800&family=Comic+Neue:wght@400;700&family=DynaPuff:wght@400..700&family=Fredoka:wght@400..700&family=Nunito:wght@400..900&family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="outdoor-styles.css">
+
+  <style>
+    /* Selector de fonturi — doar pentru pagina de ghid */
+    .font-picker {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      margin-bottom: var(--space-8);
+    }
+    .font-picker__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: var(--text-base);
+      margin-bottom: var(--space-1);
+    }
+    .font-picker__desc {
+      font-size: var(--text-sm);
+      color: var(--ink-soft);
+      margin-bottom: var(--space-4);
+    }
+    .font-picker__row {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+    .font-picker__btn {
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-pill);
+      border: 2px solid var(--border);
+      background: var(--paper);
+      color: var(--ink);
+      font-size: var(--text-base);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .font-picker__btn:hover { border-color: var(--magenta); }
+    .font-picker__btn.is-active {
+      background: var(--magenta);
+      border-color: var(--magenta);
+      color: white;
+    }
+    .font-picker__sample {
+      margin-top: var(--space-6);
+      padding-top: var(--space-6);
+      border-top: 1px dashed var(--border);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 2.5rem;
+      line-height: 1.15;
+      color: var(--ink);
+    }
+    .font-picker__diacritics {
+      margin-top: var(--space-4);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: var(--text-2xl);
+      color: var(--magenta);
+      letter-spacing: 0.05em;
+    }
+    .font-picker__diacritics-label {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: var(--text-xs);
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--space-1);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="outdoor.html" class="site-header__logo">
+        <img src="_import/logo-hopa-in-gradina.png" alt="Hopa în Grădină">
+        <span class="site-header__logo-text">Hopa în Grădină</span>
+      </a>
+      <nav class="site-nav">
+        <a href="outdoor.html">Pagina principală</a>
+        <a href="#paleta">Paletă</a>
+        <a href="#tipografie">Tipografie</a>
+        <a href="#butoane">Butoane</a>
+        <a href="#carduri">Carduri</a>
+        <a href="#formular">Formular</a>
+      </nav>
+      <div class="site-header__actions">
+        <a href="tel:+40748210054" class="icon-btn" aria-label="Telefon">
+          <i data-lucide="phone"></i>
+        </a>
+        <a href="outdoor.html#contact" class="btn btn--primary btn--small">Rezervă</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="sg-section">
+      <h1>Ghid de stil</h1>
+      <p class="lead">Ghid de stil viu pentru Hopa în Grădină. Tot ce vezi mai jos vine din <a href="outdoor-styles.css"><code>outdoor-styles.css</code></a>. Specificația scrisă e în <a href="STYLEGUIDE.md">STYLEGUIDE.md</a>.</p>
+
+      <!-- Selector de fonturi -->
+      <div class="font-picker" style="margin-top: var(--space-8);">
+        <div class="font-picker__title">Probă de literă pentru titluri</div>
+        <p class="font-picker__desc">Apasă pe fiecare buton ca să vezi cum arată titlurile cu acel tip de literă. Am păstrat doar variante care merg bine cu diacriticele românești.</p>
+        <div class="font-picker__row">
+          <button class="font-picker__btn" data-font="DynaPuff">DynaPuff (actual)</button>
+          <button class="font-picker__btn" data-font="Fredoka">Fredoka</button>
+          <button class="font-picker__btn" data-font="Nunito">Nunito</button>
+          <button class="font-picker__btn" data-font="Quicksand">Quicksand</button>
+          <button class="font-picker__btn" data-font="Baloo 2">Baloo 2</button>
+          <button class="font-picker__btn" data-font="Atma">Atma</button>
+          <button class="font-picker__btn" data-font="Comic Neue">Comic Neue</button>
+        </div>
+        <div class="font-picker__sample">Și la Hopa în Grădină sărbătorim împreună copiii din România.</div>
+        <div class="font-picker__diacritics">
+          <span class="font-picker__diacritics-label">Verifică diacriticele</span>
+          Ă Â Î Ș Ț &nbsp;·&nbsp; ă â î ș ț
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="paleta">
+      <h2 class="sg-section__title">Paletă de culori</h2>
+      <p class="sg-section__desc">Galben de soare, verde de grădină și crem cald — culorile unei zile pe iarbă la Mogoșoaia.</p>
+
+      <div class="sg-grid sg-grid--4">
+        <div class="swatch" style="background: var(--magenta); color: var(--magenta-dark);">
+          <span class="swatch__name">Galben</span>
+          <span class="swatch__hex">--magenta · #FFD91A</span>
+        </div>
+        <div class="swatch" style="background: var(--green); color: white;">
+          <span class="swatch__name">Verde</span>
+          <span class="swatch__hex">--green · #3F8738</span>
+        </div>
+        <div class="swatch" style="background: var(--cream); color: var(--ink);">
+          <span class="swatch__name">Crem</span>
+          <span class="swatch__hex">--cream · #FFF8D8</span>
+        </div>
+        <div class="swatch" style="background: var(--ink); color: var(--cream);">
+          <span class="swatch__name">Cerneală</span>
+          <span class="swatch__hex">--ink · #183719</span>
+        </div>
+      </div>
+
+      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Variante deschise și accent</h3>
+      <div class="sg-grid sg-grid--4">
+        <div class="swatch" style="background: var(--magenta-soft); color: var(--magenta-dark);">
+          <span class="swatch__name">Galben deschis</span>
+          <span class="swatch__hex">--magenta-soft · #FFF3A6</span>
+        </div>
+        <div class="swatch" style="background: var(--green-soft); color: var(--green-dark);">
+          <span class="swatch__name">Verde deschis</span>
+          <span class="swatch__hex">--green-soft · #DDF2D4</span>
+        </div>
+        <div class="swatch" style="background: var(--sun); color: var(--ink);">
+          <span class="swatch__name">Soare</span>
+          <span class="swatch__hex">--sun · #F6B91A</span>
+        </div>
+        <div class="swatch" style="background: var(--paper); color: var(--ink);">
+          <span class="swatch__name">Hârtie</span>
+          <span class="swatch__hex">--paper · #FFFCED</span>
+        </div>
+      </div>
+
+      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Plăci pentru poze</h3>
+      <p class="text-muted" style="margin-bottom: var(--space-6);">Locuri colorate care țin locul fotografiilor până vin pozele reale.</p>
+      <div class="sg-grid sg-grid--4">
+        <div class="image-slot image-slot--pink">
+          <i data-lucide="image"></i>
+          <span class="image-slot__label">roz</span>
+        </div>
+        <div class="image-slot image-slot--green">
+          <i data-lucide="image"></i>
+          <span class="image-slot__label">verde</span>
+        </div>
+        <div class="image-slot image-slot--cream">
+          <i data-lucide="image"></i>
+          <span class="image-slot__label">crem</span>
+        </div>
+        <div class="image-slot image-slot--sun">
+          <i data-lucide="image"></i>
+          <span class="image-slot__label">soare</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="tipografie">
+      <h2 class="sg-section__title">Tipografie</h2>
+      <p class="sg-section__desc">Două tipuri de literă. Unul pentru titluri și butoane (cel rotund, jucăuș), unul pentru text de citit (Inter — curat și ușor de citit pe ecrane mici).</p>
+
+      <div class="stack">
+        <div>
+          <div class="text-muted" style="font-size: var(--text-xs);">Titlu mare de pagină</div>
+          <h1>Aniversări pe care nu le organizezi tu</h1>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size: var(--text-xs);">Titlu de secțiune</div>
+          <h2>Trei ore, în exclusivitate</h2>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size: var(--text-xs);">Titlu mic de card</div>
+          <h3>Pachet Standard</h3>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size: var(--text-xs);">Paragraf intro (puțin mai mare)</div>
+          <p class="lead">Adu copilul. Restul îl facem noi. La Hopa în Grădină plătești o singură dată și pleci cu amintiri, nu cu liste de cumpărături.</p>
+        </div>
+        <div>
+          <div class="text-muted" style="font-size: var(--text-xs);">Paragraf normal</div>
+          <p>Avem pachete pentru toate vârstele și echipa noastră de animatori personalizează petrecerea după copil. Mascote pentru cei mici, magicieni și vânători de comori pentru cei mari. Tu te relaxezi cu un Caffe Latte în spațiul dedicat părinților.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="butoane">
+      <h2 class="sg-section__title">Butoane</h2>
+      <p class="sg-section__desc">Forma e mereu de pastilă, rotunjit complet. Doar un singur buton principal (cel roz, plin) e vizibil pe un ecran. Restul sunt secundare sau discrete.</p>
+
+      <h3 style="margin-bottom: var(--space-4);">Variante</h3>
+      <div class="flex-row" style="margin-bottom: var(--space-12);">
+        <a class="btn btn--primary" href="#">
+          <span>Rezervă acum</span>
+          <i data-lucide="chevron-right"></i>
+        </a>
+        <a class="btn btn--secondary" href="#">Vezi pachetele</a>
+        <a class="btn btn--ghost" href="#">Mai multe detalii</a>
+      </div>
+
+      <h3 style="margin-bottom: var(--space-4);">Mărimi</h3>
+      <div class="flex-row">
+        <a class="btn btn--primary btn--small" href="#">Mic</a>
+        <a class="btn btn--primary" href="#">Normal</a>
+        <a class="btn btn--primary btn--large" href="#">
+          <i data-lucide="party-popper"></i>
+          <span>Rezervă petrecerea</span>
+        </a>
+      </div>
+
+      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Butoane cu iconiță</h3>
+      <p class="text-muted" style="margin-bottom: var(--space-4); font-size: var(--text-sm);">Pentru acțiuni rapide în antet — telefon, email, Facebook, hartă.</p>
+      <div class="flex-row">
+        <a class="icon-btn" href="#" aria-label="Telefon"><i data-lucide="phone"></i></a>
+        <a class="icon-btn" href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+        <a class="icon-btn" href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+        <a class="icon-btn" href="#" aria-label="Hartă"><i data-lucide="map-pin"></i></a>
+      </div>
+
+      <h3 style="margin-top: var(--space-12); margin-bottom: var(--space-4);">Etichete mici</h3>
+      <p class="text-muted" style="margin-bottom: var(--space-4); font-size: var(--text-sm);">Etichete colorate pentru a evidenția lucruri scurte — autorizație, popularitate, noutate.</p>
+      <div class="flex-row">
+        <span class="badge"><i data-lucide="shield-check"></i> Autorizat ISU</span>
+        <span class="badge badge--magenta"><i data-lucide="sparkles"></i> Popular</span>
+        <span class="badge badge--sun"><i data-lucide="star"></i> Nou</span>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <h2 class="sg-section__title">Bandă cu argumente</h2>
+      <p class="sg-section__desc">Banda care apare sub hero, cu patru argumente concrete de încredere: confort, siguranță, accesibilitate.</p>
+
+      <div class="usp" style="border-radius: var(--radius-lg);">
+        <div class="container">
+          <div class="usp__grid">
+            <div class="usp__item">
+              <span class="usp__icon"><i data-lucide="shield-check"></i></span>
+              <span class="usp__title">Autorizat ISU</span>
+              <span class="usp__meta">Clădire verificată</span>
+            </div>
+            <div class="usp__item">
+              <span class="usp__icon"><i data-lucide="snowflake"></i></span>
+              <span class="usp__title">Climatizare</span>
+              <span class="usp__meta">Confort tot anul</span>
+            </div>
+            <div class="usp__item">
+              <span class="usp__icon"><i data-lucide="car-front"></i></span>
+              <span class="usp__title">Parcare gratuită</span>
+              <span class="usp__meta">Pentru toți invitații</span>
+            </div>
+            <div class="usp__item">
+              <span class="usp__icon"><i data-lucide="wifi"></i></span>
+              <span class="usp__title">Wi-Fi gratuit</span>
+              <span class="usp__meta">Pentru părinți</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="carduri">
+      <h2 class="sg-section__title">Carduri</h2>
+      <p class="sg-section__desc">Card de eveniment — placa de poză, titlu, dată, descriere scurtă, buton. La trecerea cu mouse-ul, cardul se ridică ușor.</p>
+
+      <div class="cards cards--3">
+        <article class="card">
+          <div class="card__image image-slot image-slot--pink"><i data-lucide="sparkles"></i></div>
+          <h3 class="card__title">Show interactiv de magie</h3>
+          <div class="card__meta"><i data-lucide="calendar"></i> 21 martie 2026</div>
+          <p class="card__body">Copiii nu sunt doar spectatori — participă activ la trucuri într-un show condus de Magicianul Alex.</p>
+          <div class="card__footer">
+            <a href="#" class="btn btn--secondary btn--small">Detalii</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__image image-slot image-slot--green"><i data-lucide="cake"></i></div>
+          <h3 class="card__title">Serbare final de an</h3>
+          <div class="card__meta"><i data-lucide="calendar"></i> 20 aprilie 2026</div>
+          <p class="card__body">Trei ore în exclusivitate, scenă cu microfoane și lumini, gustare sănătoasă pentru fiecare copil.</p>
+          <div class="card__footer">
+            <a href="#" class="btn btn--secondary btn--small">Detalii</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__image image-slot image-slot--sun"><i data-lucide="dog"></i></div>
+          <h3 class="card__title">Puppy Play</h3>
+          <div class="card__meta"><i data-lucide="party-popper"></i> Temă nouă</div>
+          <p class="card__body">Cățeluși mascote și jocuri în care copilul tău devine îngrijitor pentru o zi.</p>
+          <div class="card__footer">
+            <a href="#" class="btn btn--secondary btn--small">Detalii</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sg-section">
+      <h2 class="sg-section__title">Pachete</h2>
+      <p class="sg-section__desc">Două sau trei pachete așezate alături, unul evidențiat. Părintele compară vizual, vede prețul mare, citește bifele verzi.</p>
+
+      <div class="packages packages--3">
+        <div class="package">
+          <h3 class="package__name">Mini</h3>
+          <p class="package__desc">Pentru petreceri intime, până în 15 copii.</p>
+          <div class="package__price">800<span class="package__price-meta">lei / 3h</span></div>
+          <ul class="package__features">
+            <li><i data-lucide="check"></i> Loc de joacă în exclusivitate</li>
+            <li><i data-lucide="check"></i> Mese cu față de masă personalizată</li>
+            <li><i data-lucide="check"></i> Animator dedicat</li>
+            <li><i data-lucide="check"></i> Cafeneaua pentru părinți</li>
+          </ul>
+          <div class="package__cta">
+            <a href="#" class="btn btn--secondary" style="width: 100%;">Alege Mini</a>
+          </div>
+        </div>
+
+        <div class="package package--featured">
+          <span class="package__badge">Cel mai popular</span>
+          <h3 class="package__name">Standard</h3>
+          <p class="package__desc">Pachetul complet, până în 25 copii. 3 ore în exclusivitate.</p>
+          <div class="package__price">1.200<span class="package__price-meta">lei / 3h</span></div>
+          <ul class="package__features">
+            <li><i data-lucide="check"></i> Tot din Mini, plus:</li>
+            <li><i data-lucide="check"></i> Farfurii, pahare, șervețele personalizate</li>
+            <li><i data-lucide="check"></i> Scenă cu microfoane și lumini</li>
+            <li><i data-lucide="check"></i> Gustare sănătoasă pentru fiecare copil</li>
+            <li><i data-lucide="check"></i> Echipă de doi animatori</li>
+          </ul>
+          <div class="package__cta">
+            <a href="#" class="btn btn--primary" style="width: 100%;">
+              <span>Alege Standard</span>
+              <i data-lucide="chevron-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="package">
+          <h3 class="package__name">Țopa</h3>
+          <p class="package__desc">Pentru petreceri cu temă: Puppy, SPA, Glitter, Detectiv.</p>
+          <div class="package__price">1.600<span class="package__price-meta">lei / 3h</span></div>
+          <ul class="package__features">
+            <li><i data-lucide="check"></i> Tot din Standard, plus:</li>
+            <li><i data-lucide="check"></i> Temă completă (decor, costume)</li>
+            <li><i data-lucide="check"></i> Mascote sau magician</li>
+            <li><i data-lucide="check"></i> Foto-amintire pentru fiecare copil</li>
+          </ul>
+          <div class="package__cta">
+            <a href="#" class="btn btn--secondary" style="width: 100%;">Alege Țopa</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-muted" style="font-size: var(--text-sm); margin-top: var(--space-6);">
+        Prețurile de mai sus sunt orientative, ca probă de design. Proprietarul confirmă valorile reale.
+      </p>
+    </section>
+
+    <section class="sg-section" id="formular">
+      <h2 class="sg-section__title">Formular</h2>
+      <p class="sg-section__desc">Eticheta deasupra câmpului, contur roz la atingere, înălțime minimă 44px pe telefon (ca să fie ușor de apăsat cu degetul).</p>
+
+      <form class="form" style="max-width: 560px;" onsubmit="event.preventDefault();">
+        <div class="form__row form__row--2">
+          <div class="form__field">
+            <label class="form__label" for="sg-nume">Nume și prenume</label>
+            <input class="form__input" id="sg-nume" type="text" placeholder="Maria Ionescu">
+          </div>
+          <div class="form__field">
+            <label class="form__label" for="sg-telefon">Telefon</label>
+            <input class="form__input" id="sg-telefon" type="tel" placeholder="07xx xxx xxx">
+          </div>
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="sg-email">Email</label>
+          <input class="form__input" id="sg-email" type="email" placeholder="maria@email.com">
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="sg-mesaj">Mesaj</label>
+          <textarea class="form__textarea" id="sg-mesaj" placeholder="Vârsta copilului, data preferată, întrebări..."></textarea>
+          <span class="form__hint">Răspundem în maximum 24 de ore.</span>
+        </div>
+        <button class="btn btn--primary" type="submit">
+          <span>Trimite cererea</span>
+          <i data-lucide="send"></i>
+        </button>
+      </form>
+    </section>
+
+    <section class="sg-section">
+      <h2 class="sg-section__title">Bandă de contact</h2>
+      <p class="sg-section__desc">Telefonul, adresa, programul — într-un format ușor de citit dintr-o privire.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-row">
+            <span class="contact-row__icon"><i data-lucide="phone"></i></span>
+            <div>
+              <div class="contact-row__label">Telefon</div>
+              <div class="contact-row__value"><a href="tel:+40748210054">+40 748 210 054</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__icon"><i data-lucide="mail"></i></span>
+            <div>
+              <div class="contact-row__label">Email</div>
+              <div class="contact-row__value"><a href="mailto:salut@hopatopaland.ro">salut@hopatopaland.ro</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__icon"><i data-lucide="map-pin"></i></span>
+            <div>
+              <div class="contact-row__label">Adresă</div>
+              <div class="contact-row__value">Str. Constantin Brâncoveanu 21, Mogoșoaia</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__icon"><i data-lucide="clock"></i></span>
+            <div>
+              <div class="contact-row__label">Program</div>
+              <div class="contact-row__value">L–V 14:00–21:00 · S–D 10:00–21:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="map-slot">
+          <i data-lucide="map"></i>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <h4>Hopa în Grădină</h4>
+          <p style="color: var(--ink-muted); font-size: var(--text-sm);">Locație outdoor de evenimente, cu grădină de 1.300 mp, în Mogoșoaia.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>Pagini</h4>
+          <ul>
+            <li><a href="outdoor.html">Pagina principală</a></li>
+            <li><a href="outdoor-style.html">Ghid de stil</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+40748210054">0748 210 054</a></li>
+            <li><a href="mailto:salut@hopatopaland.ro">salut@hopatopaland.ro</a></li>
+            <li>Str. Constantin Brâncoveanu 21, Mogoșoaia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__legal">
+        <span>© 2026 Hopa în Grădină. Toate drepturile rezervate.</span>
+        <span>Făcut cu grijă, în Mogoșoaia.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // Selectorul de fonturi — schimbă tipul de literă pentru titluri live.
+    (function () {
+      const buttons = document.querySelectorAll('.font-picker__btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const font = btn.dataset.font;
+          document.documentElement.style.setProperty(
+            '--font-display',
+            "'" + font + "', system-ui, sans-serif"
+          );
+          buttons.forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+        });
+      });
+      // Marchează fontul curent (DynaPuff) ca activ inițial.
+      const active = document.querySelector('[data-font="DynaPuff"]');
+      if (active) active.classList.add('is-active');
+    })();
+  </script>
+</body>
+</html>
