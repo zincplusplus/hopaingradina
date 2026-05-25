@@ -116,7 +116,7 @@
               <li><i data-lucide="check"></i> Tot ce include pachetul Standard</li>
               <li><i data-lucide="check"></i> Animator personaj la alegere timp de 2 ore</li>
               <li><i data-lucide="check"></i> Program de animație adecvat vârstei: pictură pe față, baloane modelatoare, concursuri, dansuri și karaoke</li>
-              <li><i data-lucide="external-link"></i> <a href="personaje.html" target="_blank" rel="noopener">Selecție personaje</a></li>
+              <li><i data-lucide="sparkles"></i> <button class="text-action" type="button" data-open-character-dialog>Selecție personaje</button></li>
               <li><i data-lucide="check"></i> Extra copil: 140 lei</li>
             </ul>
             <div class="package__cta">
@@ -150,6 +150,86 @@
         </p>
       </div>
     </section>
+
+    <dialog class="theme-dialog" id="characterDialog" aria-labelledby="characterDialogTitle">
+      <div class="theme-dialog__head">
+        <div>
+          <span class="badge"><i data-lucide="sparkles"></i> Pachetul Hopa</span>
+          <h2 class="theme-dialog__title" id="characterDialogTitle">Selecție personaje</h2>
+          <p class="theme-dialog__lead">Dacă sărbătoritul/sărbătorita nu are încă un personaj preferat, vă prezentăm noi o selecție din care puteți alege.</p>
+        </div>
+        <button class="icon-btn theme-dialog__close" type="button" data-close-character-dialog aria-label="Închide">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="theme-dialog__body">
+        <section class="theme-group">
+          <h3 class="theme-group__title">Personaje feminine</h3>
+          <div class="theme-list">
+            <article class="theme-item"><h4>Rumi K-pop Demon Hunters</h4></article>
+            <article class="theme-item"><h4>Barbie</h4></article>
+            <article class="theme-item"><h4>Unicorn</h4></article>
+            <article class="theme-item"><h4>Astronaut fată</h4></article>
+            <article class="theme-item"><h4>Wednesday</h4></article>
+            <article class="theme-item"><h4>Super Pisicuța roz</h4></article>
+            <article class="theme-item"><h4>Cățelușa Bluey</h4></article>
+            <article class="theme-item"><h4>Gaby's Dollhouse</h4></article>
+            <article class="theme-item"><h4>Tails din Ariciul Sonic</h4></article>
+            <article class="theme-item"><h4>Disney</h4><p>Minnie Mouse, Mickey Mouse, Daisy Duck, Donald</p></article>
+            <article class="theme-item"><h4>Minioni</h4></article>
+            <article class="theme-item"><h4>Hello Kitty</h4></article>
+            <article class="theme-item"><h4>Pisica Neagră</h4></article>
+            <article class="theme-item"><h4>LOL Surprise</h4></article>
+            <article class="theme-item"><h4>Ponei</h4><p>Celestia, Rainbow Dash, Applejack, Fluttershy</p></article>
+            <article class="theme-item"><h4>Prințese</h4><p>Elsa, Ana, Olaf, Alba ca Zăpada, Rapunzel, Aurora, Ariel, Cenușăreasa, Jasmine, Belle, Sofia, Pocahontas, Moana</p></article>
+            <article class="theme-item"><h4>Shimmer și Shine</h4></article>
+            <article class="theme-item"><h4>Clopoțica, Zarina</h4></article>
+            <article class="theme-item"><h4>Astrid din Îmblânzirea Dragonului</h4></article>
+            <article class="theme-item"><h4>Barbie Fairytopia sau Mariposa</h4></article>
+            <article class="theme-item"><h4>Costum tradițional românesc</h4></article>
+            <article class="theme-item"><h4>Zâna Fructelor și a Legumelor</h4></article>
+            <article class="theme-item"><h4>Zânele anotimpurilor</h4><p>Zâna Vară, Zâna Toamnă, Zâna Iarnă</p></article>
+            <article class="theme-item"><h4>Eroi în pijama</h4><p>Bufnița</p></article>
+            <article class="theme-item"><h4>Patrula Cățelușilor</h4><p>Skye</p></article>
+            <article class="theme-item"><h4>Supereroine</h4><p>Wonder Woman, Căpitan America fată, Spiderwoman, Batgirl</p></article>
+          </div>
+        </section>
+
+        <section class="theme-group">
+          <h3 class="theme-group__title">Personaje masculine</h3>
+          <div class="theme-list">
+            <article class="theme-item"><h4>Steve din Minecraft</h4></article>
+            <article class="theme-item"><h4>Creeper</h4></article>
+            <article class="theme-item"><h4>Ariciul Super Sonic</h4></article>
+            <article class="theme-item"><h4>Astronaut</h4></article>
+            <article class="theme-item"><h4>Thor</h4></article>
+            <article class="theme-item"><h4>Ursul și Masha</h4></article>
+            <article class="theme-item"><h4>Ash și Pikachu din Pokemon</h4></article>
+            <article class="theme-item"><h4>Eroi în pijama</h4><p>Pisoi, Shopy</p></article>
+            <article class="theme-item"><h4>Patrula Cățelușilor</h4><p>Ryder, Chase, Marshall</p></article>
+            <article class="theme-item"><h4>Cars</h4><p>Fulger McQueen</p></article>
+            <article class="theme-item"><h4>Pompierul Sam</h4></article>
+            <article class="theme-item"><h4>Supereroi</h4><p>Spiderman, Batman, Căpitan America, Superman, Flash, Black Panther, Green Lantern, Bumblebee, Iron Man</p></article>
+            <article class="theme-item"><h4>Pirați</h4></article>
+            <article class="theme-item"><h4>Țestoasa Ninja</h4></article>
+            <article class="theme-item"><h4>Karatist și karatistă</h4></article>
+            <article class="theme-item"><h4>Fortnite</h4></article>
+            <article class="theme-item"><h4>Lego Ninjago</h4><p>Cai</p></article>
+            <article class="theme-item"><h4>Aladin</h4></article>
+            <article class="theme-item"><h4>Costum tradițional românesc</h4></article>
+            <article class="theme-item"><h4>Star Wars</h4><p>Darth Vader</p></article>
+            <article class="theme-item"><h4>Disney</h4><p>Mickey Mouse, Donald, Goofy, Tarzan, Motan Noir, Scooby Doo</p></article>
+            <article class="theme-item"><h4>Gladiator</h4></article>
+            <article class="theme-item"><h4>Minioni</h4></article>
+            <article class="theme-item"><h4>Dinozaur</h4></article>
+            <article class="theme-item"><h4>Cavaler</h4></article>
+            <article class="theme-item"><h4>Prinț</h4></article>
+            <article class="theme-item"><h4>Fotbalist</h4></article>
+          </div>
+        </section>
+      </div>
+    </dialog>
 
     <dialog class="theme-dialog" id="themeDialog" aria-labelledby="themeDialogTitle">
       <div class="theme-dialog__head">
@@ -523,9 +603,20 @@
   <script>
     lucide.createIcons();
 
+    const characterDialog = document.getElementById('characterDialog');
+    const openCharacterDialog = document.querySelector('[data-open-character-dialog]');
+    const closeCharacterDialog = document.querySelector('[data-close-character-dialog]');
     const themeDialog = document.getElementById('themeDialog');
     const openThemeDialog = document.querySelector('[data-open-theme-dialog]');
     const closeThemeDialog = document.querySelector('[data-close-theme-dialog]');
+
+    openCharacterDialog?.addEventListener('click', () => characterDialog?.showModal());
+    closeCharacterDialog?.addEventListener('click', () => characterDialog?.close());
+    characterDialog?.addEventListener('click', (event) => {
+      if (event.target === characterDialog) {
+        characterDialog.close();
+      }
+    });
 
     openThemeDialog?.addEventListener('click', () => themeDialog?.showModal());
     closeThemeDialog?.addEventListener('click', () => themeDialog?.close());

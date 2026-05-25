@@ -124,6 +124,7 @@ Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul e
 - **Card eveniment** — image slot, titlu, dată, descriere scurtă, buton.
 - **Galerie slideshow** — carusel foto cu controale stânga/dreapta și puncte de navigare, folosit pentru mixuri reprezentative de spațiu, activități și petreceri.
 - **Card pachet** — featured cu border magenta, listă cu checkmarks verde, preț mare, CTA.
+- **Dialog personaje** — pop-up centrat peste pagină, declanșat din pachetul Hopa, cu închidere pe `x` sau click pe fundal.
 - **Dialog teme** — pop-up centrat peste pagină, fundal alb, header crem, închidere cu iconița `x`, liste de teme în blocuri compacte.
 - **Formular contact** — vertical, label deasupra input-ului, focus magenta.
 - **Footer** — fundal ink, 3 coloane pe desktop.
