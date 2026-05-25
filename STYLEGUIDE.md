@@ -89,7 +89,7 @@ Le folosim via CDN (`unpkg.com/lucide@latest`), inițializate cu o singură lini
 
 Lucide se potrivește perfect cu brandul: stroke-based, rotunjit, prietenos, neutru cromatic (preia `currentColor`).
 
-Iconițe pe care le folosim acum: `phone`, `mail`, `map-pin`, `clock`, `calendar`, `wifi`, `car-front`, `snowflake`, `shield-check`, `sparkles`, `cake`, `gift`, `party-popper`, `check`, `chevron-right`, `menu`, `x`.
+Iconițe pe care le folosim acum: `phone`, `mail`, `map-pin`, `clock`, `calendar`, `wifi`, `car-front`, `snowflake`, `shield-check`, `sparkles`, `images`, `cake`, `gift`, `party-popper`, `check`, `chevron-right`, `menu`, `x`.
 
 ## Voice
 
@@ -122,6 +122,7 @@ Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul e
 - **Colaj foto** — bloc cu o fotografie principală și trei secundare, colțuri rotunjite, folosit pentru a arăta spațiul și activitățile într-un singur cadru.
 - **USP strip** — 4 iconițe + label + meta. 2 coloane pe mobil, 4 pe desktop.
 - **Card eveniment** — image slot, titlu, dată, descriere scurtă, buton.
+- **Galerie mosaic** — grilă foto cu imagini wide/tall, colțuri rotunjite și decupare `cover`, folosită pentru mixuri reprezentative de spațiu, activități și petreceri.
 - **Card pachet** — featured cu border magenta, listă cu checkmarks verde, preț mare, CTA.
 - **Dialog teme** — pop-up centrat peste pagină, fundal alb, header crem, închidere cu iconița `x`, liste de teme în blocuri compacte.
 - **Formular contact** — vertical, label deasupra input-ului, focus magenta.
