@@ -290,31 +290,80 @@
           <p class="section__lead">Un mix de joacă, petreceri tematice, ateliere, scenă și spații pregătite pentru copii și părinți.</p>
         </div>
 
-        <div class="gallery-mosaic">
-          <figure class="gallery-mosaic__item gallery-mosaic__item--wide">
-            <img src="_import/indoor-hero-playground.jpg" alt="Spațiul indoor de joacă Hopa Țopa Land cu tiroliană și plasă de protecție">
-          </figure>
-          <figure class="gallery-mosaic__item">
-            <img src="_import/indoor-collage-animation.jpg" alt="Animatori costumați și copii la petrecere tematică">
-          </figure>
-          <figure class="gallery-mosaic__item">
-            <img src="_import/indoor-collage-workshop.jpg" alt="Copii participând la un atelier creativ">
-          </figure>
-          <figure class="gallery-mosaic__item gallery-mosaic__item--tall">
-            <img src="_import/indoor-collage-play.jpg" alt="Copii jucându-se în piscina cu bile">
-          </figure>
-          <figure class="gallery-mosaic__item">
-            <img src="_import/indoor-parent-zone.jpg" alt="Zona dedicată pentru părinți">
-          </figure>
-          <figure class="gallery-mosaic__item">
-            <img src="_import/galerie-petrecere-1.jpeg" alt="Moment de spectacol la o petrecere Hopa Țopa Land">
-          </figure>
-          <figure class="gallery-mosaic__item">
-            <img src="_import/galerie-petrecere-2.jpeg" alt="Copii urmărind un moment special pe scenă">
-          </figure>
-          <figure class="gallery-mosaic__item gallery-mosaic__item--wide">
-            <img src="_import/galerie-petrecere-3.jpeg" alt="Copii dansând și cântând la o petrecere Hopa Țopa Land">
-          </figure>
+        <div class="gallery-slider" data-gallery-slider>
+          <div class="gallery-slider__viewport">
+            <div class="gallery-slider__track">
+              <figure class="gallery-slide">
+                <img src="_import/indoor-hero-playground.jpg" alt="Spațiul indoor de joacă Hopa Țopa Land cu tiroliană și plasă de protecție">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-collage-animation.jpg" alt="Animatori costumați și copii la petrecere tematică">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-collage-workshop.jpg" alt="Copii participând la un atelier creativ">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-collage-play.jpg" alt="Copii jucându-se în piscina cu bile">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-parent-zone.jpg" alt="Zona dedicată pentru părinți">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/galerie-petrecere-1.jpeg" alt="Moment de spectacol la o petrecere Hopa Țopa Land">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/galerie-petrecere-2.jpeg" alt="Copii urmărind un moment special pe scenă">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/galerie-petrecere-3.jpeg" alt="Copii dansând și cântând la o petrecere Hopa Țopa Land">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-01.jpg" alt="Zona dedicată pentru părinți cu canapea și fotolii">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-02.jpg" alt="Detalii pregătite pentru părinți în zona de relaxare">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-03.jpg" alt="Copil jucându-se cu mașinuță în spațiul indoor">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-04.jpg" alt="Detaliu colorat din zona de joacă">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-05.jpg" alt="Copil urcând în traseul de joacă printre baloane">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-06.jpg" alt="Părinți în zona dedicată pentru relaxare">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-07.jpg" alt="Copii într-o activitate de petrecere la Hopa Țopa Land">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-08.jpg" alt="Animator costumat ca pirat la petrecere">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-09.jpg" alt="Copii participând la jocuri de grup">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-10.jpg" alt="Moment de dans și animație cu copiii">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-11.jpg" alt="Atmosferă de petrecere în spațiul Hopa Țopa Land">
+              </figure>
+              <figure class="gallery-slide">
+                <img src="_import/indoor-gallery-12.jpg" alt="Pictură pe față la petrecere">
+              </figure>
+            </div>
+          </div>
+          <div class="gallery-slider__controls">
+            <button class="icon-btn gallery-slider__btn" type="button" data-gallery-prev aria-label="Poza anterioară">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <div class="gallery-slider__dots" data-gallery-dots aria-label="Navigare galerie"></div>
+            <button class="icon-btn gallery-slider__btn" type="button" data-gallery-next aria-label="Poza următoare">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -485,6 +534,45 @@
         themeDialog.close();
       }
     });
+
+    const gallery = document.querySelector('[data-gallery-slider]');
+    if (gallery) {
+      const track = gallery.querySelector('.gallery-slider__track');
+      const slides = Array.from(gallery.querySelectorAll('.gallery-slide'));
+      const dots = gallery.querySelector('[data-gallery-dots]');
+      let activeSlide = 0;
+
+      const setSlide = (nextSlide) => {
+        activeSlide = (nextSlide + slides.length) % slides.length;
+        track.style.transform = `translateX(-${activeSlide * 100}%)`;
+        slides.forEach((slide, index) => {
+          slide.toggleAttribute('aria-hidden', index !== activeSlide);
+        });
+        Array.from(dots.children).forEach((dot, index) => {
+          dot.classList.toggle('is-active', index === activeSlide);
+          dot.setAttribute('aria-current', index === activeSlide ? 'true' : 'false');
+        });
+      };
+
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'gallery-slider__dot';
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Arată poza ${index + 1}`);
+        dot.addEventListener('click', () => setSlide(index));
+        dots.appendChild(dot);
+      });
+
+      gallery.querySelector('[data-gallery-prev]')?.addEventListener('click', () => setSlide(activeSlide - 1));
+      gallery.querySelector('[data-gallery-next]')?.addEventListener('click', () => setSlide(activeSlide + 1));
+      setSlide(0);
+
+      let autoPlay = window.setInterval(() => setSlide(activeSlide + 1), 5000);
+      gallery.addEventListener('mouseenter', () => window.clearInterval(autoPlay));
+      gallery.addEventListener('mouseleave', () => {
+        autoPlay = window.setInterval(() => setSlide(activeSlide + 1), 5000);
+      });
+    }
   </script>
 </body>
 </html>
