@@ -119,6 +119,7 @@ Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul e
 
 - **Header plutitor** — logo + nav (desktop) / logo + telefon + CTA (mobil). Sticky, cu blur pe scroll.
 - **Hero** — titlu + lead + CTA + image slot pe dreapta. Pe mobil, totul stacked, image slot sub.
+- **Colaj foto** — bloc cu o fotografie principală și trei secundare, colțuri rotunjite, folosit pentru a arăta spațiul și activitățile într-un singur cadru.
 - **USP strip** — 4 iconițe + label + meta. 2 coloane pe mobil, 4 pe desktop.
 - **Card eveniment** — image slot, titlu, dată, descriere scurtă, buton.
 - **Card pachet** — featured cu border magenta, listă cu checkmarks verde, preț mare, CTA.
