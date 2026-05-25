@@ -122,6 +122,7 @@ Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul e
 - **USP strip** — 4 iconițe + label + meta. 2 coloane pe mobil, 4 pe desktop.
 - **Card eveniment** — image slot, titlu, dată, descriere scurtă, buton.
 - **Card pachet** — featured cu border magenta, listă cu checkmarks verde, preț mare, CTA.
+- **Dialog teme** — pop-up centrat peste pagină, fundal alb, header crem, închidere cu iconița `x`, liste de teme în blocuri compacte.
 - **Formular contact** — vertical, label deasupra input-ului, focus magenta.
 - **Footer** — fundal ink, 3 coloane pe desktop.
 

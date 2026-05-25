@@ -172,10 +172,10 @@
             <div class="package__price">2.950*<span class="package__price-meta">lei / 10 copii</span></div>
             <ul class="package__features">
               <li><i data-lucide="check"></i> Pentru sărbătoriții care vor o petrecere tematică, cu ateliere și activități personalizate</li>
-              <li><i data-lucide="check"></i> Tematici personalizate după preferințele copilului</li>
               <li><i data-lucide="check"></i> Program adaptat pentru vârste între 3 și 12 ani</li>
               <li><i data-lucide="check"></i> Recuzită adaptată temei alese</li>
               <li><i data-lucide="check"></i> Șampanie pentru copii pentru momentul festiv</li>
+              <li><i data-lucide="sparkles"></i> <button class="text-action" type="button" data-open-theme-dialog>Alege tema potrivită copilului tău</button></li>
               <li><i data-lucide="check"></i> Extra copil: 160 lei</li>
             </ul>
             <div class="package__cta">
@@ -189,6 +189,93 @@
         </p>
       </div>
     </section>
+
+    <dialog class="theme-dialog" id="themeDialog" aria-labelledby="themeDialogTitle">
+      <div class="theme-dialog__head">
+        <div>
+          <span class="badge"><i data-lucide="sparkles"></i> Pachetul Țopa</span>
+          <h2 class="theme-dialog__title" id="themeDialogTitle">Alege tema potrivită copilului tău</h2>
+          <p class="theme-dialog__lead">Temele pot fi adaptate în funcție de vârsta copilului, preferințe și energia grupului.</p>
+        </div>
+        <button class="icon-btn theme-dialog__close" type="button" data-close-theme-dialog aria-label="Închide">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="theme-dialog__body">
+        <section class="theme-group">
+          <h3 class="theme-group__title">Teme recomandate 5-10 ani</h3>
+          <div class="theme-list">
+            <article class="theme-item">
+              <h4>Puppy Play</h4>
+              <p>Interacțiune cu cățeluși prietenoși, urmată de jocuri dinamice cu animatorul.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Yoki Doki Party</h4>
+              <p>Mascotă la alegere, două personaje și aventuri interactive cu dansuri, muzică și recuzită tematică.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Treasure Hunt Party</h4>
+              <p>Căutare de comori cu indicii, probe de echipă, puzzle-uri și surprize la final.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Glitter Party</h4>
+              <p>Accesorii strălucitoare, sclipici, împletituri colorate, dansuri și defilare.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Circus Party</h4>
+              <p>Jocuri de echilibru, sincronizare și exerciții de grup cu cercuri, mingi și eșarfe.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Ice & Color</h4>
+              <p>Experimente colorate cu gheață carbonică, vulcani, baloane și activități științifice prin joacă.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Sherlock Holmes</h4>
+              <p>Misiune de detectivi cu halate, lupe, probe secrete, hartă a misterului și tuneluri cu lasere.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Profesorii Trăsniți</h4>
+              <p>Laborator interactiv cu experimente, slime, culori și reacții spectaculoase.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Slime Party</h4>
+              <p>Atelier de slime, jocuri tematice și un slime creat de fiecare copil ca suvenir.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Harry Potter Party</h4>
+              <p>Ceremonie de sortare, atelier de poțiuni, baghete magice și joc de Quidditch adaptat.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Dinosaur Party</h4>
+              <p>Aventură de mici paleontologi cu oase de dinozaur, povești preistorice și jocuri de explorare.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Star Wars Party</h4>
+              <p>Misiune intergalactică, probe pe harta cosmică, face painting tematic și recunoaștere Jedi.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="theme-group">
+          <h3 class="theme-group__title">Teme recomandate 7-12 ani</h3>
+          <div class="theme-list">
+            <article class="theme-item">
+              <h4>Nerf Battle Party</h4>
+              <p>Misiuni de echipă cu blastere Nerf, ochelari de protecție, probe de țintă și confruntare finală.</p>
+            </article>
+            <article class="theme-item">
+              <h4>TikTok Party</h4>
+              <p>Provocări amuzante, dansuri, filmări, sonorizare cu microfoane și momente de studio.</p>
+            </article>
+            <article class="theme-item">
+              <h4>Disco Party</h4>
+              <p>Dansuri antrenante, brățări fosforescente și atmosferă de ring de dans pentru toți invitații.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </dialog>
 
     <!-- Contact -->
     <section class="section" id="contact" style="background: var(--paper);">
@@ -341,6 +428,20 @@
   </footer>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+
+    const themeDialog = document.getElementById('themeDialog');
+    const openThemeDialog = document.querySelector('[data-open-theme-dialog]');
+    const closeThemeDialog = document.querySelector('[data-close-theme-dialog]');
+
+    openThemeDialog?.addEventListener('click', () => themeDialog?.showModal());
+    closeThemeDialog?.addEventListener('click', () => themeDialog?.close());
+    themeDialog?.addEventListener('click', (event) => {
+      if (event.target === themeDialog) {
+        themeDialog.close();
+      }
+    });
+  </script>
 </body>
 </html>
