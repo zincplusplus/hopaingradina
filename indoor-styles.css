@@ -405,14 +405,14 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 
 /* Gallery */
 .gallery-slider {
-  max-width: 920px;
+  max-width: 800px;
   margin: 0 auto;
 }
 .gallery-slider__viewport {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  background: var(--paper);
+  background: var(--cream);
 }
 .gallery-slider__track {
   display: flex;
@@ -421,12 +421,19 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 .gallery-slide {
   flex: 0 0 100%;
   margin: 0;
+  background: var(--cream);
 }
 .gallery-slide img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: min(58vh, 520px);
+  object-fit: contain;
   display: block;
+  background: var(--cream);
+}
+@media (max-width: 640px) {
+  .gallery-slide img {
+    height: min(62vh, 440px);
+  }
 }
 .gallery-slider__controls {
   display: flex;
