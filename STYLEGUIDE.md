@@ -123,6 +123,7 @@ Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul e
 - **USP strip** — 4 iconițe + label + meta. 2 coloane pe mobil, 4 pe desktop.
 - **Card eveniment** — image slot, titlu, dată, descriere scurtă, buton.
 - **Galerie slideshow** — carusel foto mai compact, cu controale stânga/dreapta și puncte de navigare, folosit pentru mixuri reprezentative de spațiu, activități și petreceri. Imaginile se văd întregi, fără tăieri importante.
+- **Review slideshow** — carusel text pentru opinia clienților, cu stele, text central și controale simple. Se folosește pentru mesaje scurte, ușor de citit, nu pentru paragrafe lungi.
 - **Card pachet** — featured cu border magenta, listă cu checkmarks verde, preț mare, CTA.
 - **Banner extra opțiuni** — bandă compactă sub pachete, cu CTA către pop-upul de extra opțiuni.
 - **Dialog personaje** — pop-up centrat peste pagină, declanșat din pachetul Hopa, cu închidere pe `x` sau click pe fundal.

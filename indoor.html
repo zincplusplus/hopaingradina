@@ -425,6 +425,58 @@
       </div>
     </section>
 
+    <!-- Reviewuri -->
+    <section class="section" id="opinii">
+      <div class="container">
+        <div class="section__head">
+          <span class="badge badge--sun"><i data-lucide="star"></i> Reviewuri Google</span>
+          <h2 class="section__title" style="margin-top: var(--space-3);">Opinia clienților</h2>
+          <p class="section__lead">Părinții apreciază energia petrecerilor, implicarea animatorilor și faptul că spațiul este pregătit pentru copii și adulți.</p>
+        </div>
+
+        <div class="review-slider" data-review-slider>
+          <div class="review-slider__viewport">
+            <div class="review-slider__track">
+              <article class="review-slide">
+                <div class="review-slide__stars" aria-label="5 stele">★★★★★</div>
+                <p class="review-slide__text">Copiii s-au distrat de la început până la final, iar activitățile au fost potrivite pentru vârsta lor.</p>
+                <p class="review-slide__meta">Temă menționată în reviewurile Google</p>
+              </article>
+              <article class="review-slide">
+                <div class="review-slide__stars" aria-label="5 stele">★★★★★</div>
+                <p class="review-slide__text">Spațiu curat, colorat și foarte bine organizat, cu atmosferă relaxată pentru părinți.</p>
+                <p class="review-slide__meta">Temă menționată în reviewurile Google</p>
+              </article>
+              <article class="review-slide">
+                <div class="review-slide__stars" aria-label="5 stele">★★★★★</div>
+                <p class="review-slide__text">Animatorii țin copiii implicați, cu jocuri, dansuri și multă energie bună.</p>
+                <p class="review-slide__meta">Temă menționată în reviewurile Google</p>
+              </article>
+              <article class="review-slide">
+                <div class="review-slide__stars" aria-label="5 stele">★★★★★</div>
+                <p class="review-slide__text">Petrecerile sunt ușor de organizat, iar echipa ajută cu detaliile importante.</p>
+                <p class="review-slide__meta">Temă menționată în reviewurile Google</p>
+              </article>
+              <article class="review-slide">
+                <div class="review-slide__stars" aria-label="5 stele">★★★★★</div>
+                <p class="review-slide__text">Copiii iubesc zona de joacă, iar părinții au unde să stea liniștiți la cafea.</p>
+                <p class="review-slide__meta">Temă menționată în reviewurile Google</p>
+              </article>
+            </div>
+          </div>
+          <div class="review-slider__controls">
+            <button class="icon-btn review-slider__btn" type="button" data-review-prev aria-label="Review anterior">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <div class="review-slider__dots" data-review-dots aria-label="Navigare reviewuri"></div>
+            <button class="icon-btn review-slider__btn" type="button" data-review-next aria-label="Review următor">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Galerie -->
     <section class="section" id="galerie">
       <div class="container">
@@ -768,6 +820,45 @@
       gallery.addEventListener('mouseenter', () => window.clearInterval(autoPlay));
       gallery.addEventListener('mouseleave', () => {
         autoPlay = window.setInterval(() => setSlide(activeSlide + 1), 5000);
+      });
+    }
+
+    const reviews = document.querySelector('[data-review-slider]');
+    if (reviews) {
+      const track = reviews.querySelector('.review-slider__track');
+      const slides = Array.from(reviews.querySelectorAll('.review-slide'));
+      const dots = reviews.querySelector('[data-review-dots]');
+      let activeSlide = 0;
+
+      const setSlide = (nextSlide) => {
+        activeSlide = (nextSlide + slides.length) % slides.length;
+        track.style.transform = `translateX(-${activeSlide * 100}%)`;
+        slides.forEach((slide, index) => {
+          slide.toggleAttribute('aria-hidden', index !== activeSlide);
+        });
+        Array.from(dots.children).forEach((dot, index) => {
+          dot.classList.toggle('is-active', index === activeSlide);
+          dot.setAttribute('aria-current', index === activeSlide ? 'true' : 'false');
+        });
+      };
+
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'review-slider__dot';
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Arată reviewul ${index + 1}`);
+        dot.addEventListener('click', () => setSlide(index));
+        dots.appendChild(dot);
+      });
+
+      reviews.querySelector('[data-review-prev]')?.addEventListener('click', () => setSlide(activeSlide - 1));
+      reviews.querySelector('[data-review-next]')?.addEventListener('click', () => setSlide(activeSlide + 1));
+      setSlide(0);
+
+      let autoPlay = window.setInterval(() => setSlide(activeSlide + 1), 6500);
+      reviews.addEventListener('mouseenter', () => window.clearInterval(autoPlay));
+      reviews.addEventListener('mouseleave', () => {
+        autoPlay = window.setInterval(() => setSlide(activeSlide + 1), 6500);
       });
     }
   </script>
