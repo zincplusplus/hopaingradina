@@ -751,6 +751,19 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   color: var(--ink-soft);
   font-size: var(--text-sm);
 }
+#characterDialog .theme-group__title {
+  font-size: var(--text-xl);
+}
+#characterDialog .theme-item {
+  padding: var(--space-3);
+}
+#characterDialog .theme-item h4 {
+  font-size: var(--text-sm);
+  line-height: 1.25;
+}
+#characterDialog .theme-item p {
+  font-size: var(--text-xs);
+}
 
 /* Form */
 .form { display: grid; gap: var(--space-4); }
