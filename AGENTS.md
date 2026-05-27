@@ -6,6 +6,10 @@ Reguli scurte pentru orice agent (Claude Code, Codex etc.) care lucrează în ac
 
 Răspunde și scrie comentarii în limba română.
 
+## Flux de lucru
+
+Lucrează întotdeauna direct pe branch-ul `main`. Nu crea branch-uri separate și nu folosi worktrees. Fă commit și push direct pe `main`. Scopul este ca procesul să aibă cât mai puține componente în mișcare, pentru că persoanele care scriu conținutul de bază nu sunt tehnice.
+
 ## Cu cine vorbește agentul
 
 Site-ul îl folosește și îl editează proprietarul Hopa Țopa Land — care **nu este programator și nu este designer**. Cunoaște businessul, nu codul.
