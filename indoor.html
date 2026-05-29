@@ -902,7 +902,12 @@
     if (eventsList) {
       Array.from(eventsList.querySelectorAll('[data-event-date]'))
         .sort((firstEvent, secondEvent) => secondEvent.dataset.eventDate.localeCompare(firstEvent.dataset.eventDate))
-        .forEach((eventCard) => eventsList.appendChild(eventCard));
+        .forEach((eventCard, index) => {
+          const isOlderEvent = index >= 3;
+          eventCard.hidden = isOlderEvent;
+          eventCard.setAttribute('aria-hidden', isOlderEvent ? 'true' : 'false');
+          eventsList.appendChild(eventCard);
+        });
     }
 
     const gallery = document.querySelector('[data-gallery-slider]');
