@@ -692,7 +692,7 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   display: grid;
   grid-template-columns: auto 1fr;
   gap: var(--space-4);
-  align-items: flex-start;
+  align-items: center;
   padding: var(--space-5);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -713,14 +713,6 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 .school-offer__content h3 {
   margin-bottom: var(--space-3);
   font-size: var(--text-lg);
-}
-.school-offer__content ul {
-  margin: 0 0 var(--space-4) var(--space-5);
-  color: var(--ink-soft);
-  font-size: var(--text-sm);
-}
-.school-offer__content li + li {
-  margin-top: var(--space-1);
 }
 @media (max-width: 560px) {
   .school-offer {

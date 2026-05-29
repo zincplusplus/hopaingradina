@@ -378,8 +378,7 @@
       <div class="container">
         <div class="section__head">
           <span class="badge"><i data-lucide="school"></i> Școli & grădinițe</span>
-          <h2 class="section__title" style="margin-top: var(--space-3);">Oferte pentru grupuri de copii</h2>
-          <p class="section__lead">Pentru serbări, vizite organizate și programe speciale, pregătim spațiul în exclusivitate și adaptăm activitățile la vârsta copiilor.</p>
+          <h2 class="section__title" style="margin-top: var(--space-3);">Oferte școli și grădinițe</h2>
         </div>
 
         <div class="school-offers">
@@ -387,12 +386,7 @@
             <div class="school-offer__icon image-slot image-slot--green"><i data-lucide="party-popper"></i></div>
             <div class="school-offer__content">
               <h3>Oferta serbări</h3>
-              <ul>
-                <li>3 ore de distracție în exclusivitate</li>
-                <li>Scenă cu microfoane și lumini pentru momentul de serbare</li>
-                <li>Gustare sănătoasă, băuturi pentru copii și opțiuni extra</li>
-              </ul>
-              <button class="btn btn--secondary btn--small" type="button" data-open-school-offer-dialog>Vezi oferta</button>
+              <button class="btn btn--secondary btn--small" type="button" data-open-school-offer-dialog data-school-offer-badge="Oferta serbări" data-school-offer-title="Serbări pentru școli și grădinițe">Vezi oferta</button>
             </div>
           </article>
 
@@ -400,12 +394,7 @@
             <div class="school-offer__icon image-slot image-slot--sun"><i data-lucide="leaf"></i></div>
             <div class="school-offer__content">
               <h3>Săptămâna altfel / Săptămâna verde</h3>
-              <ul>
-                <li>Program pentru clase și grupe de grădiniță</li>
-                <li>Joacă și activități potrivite vârstei copiilor</li>
-                <li>Detalii adaptate după numărul de copii și program</li>
-              </ul>
-              <a href="#contact" class="btn btn--secondary btn--small">Cere detalii</a>
+              <button class="btn btn--secondary btn--small" type="button" data-open-school-offer-dialog data-school-offer-badge="Oferta Săptămâna altfel / verde" data-school-offer-title="Săptămâna altfel / Săptămâna verde">Vezi oferta</button>
             </div>
           </article>
         </div>
@@ -415,9 +404,8 @@
     <dialog class="theme-dialog" id="schoolOfferDialog" aria-labelledby="schoolOfferDialogTitle">
       <div class="theme-dialog__head">
         <div>
-          <span class="badge"><i data-lucide="school"></i> Oferta serbări</span>
+          <span class="badge"><i data-lucide="school"></i> <span id="schoolOfferBadge">Oferta serbări</span></span>
           <h2 class="theme-dialog__title" id="schoolOfferDialogTitle">Serbări pentru școli și grădinițe</h2>
-          <p class="theme-dialog__lead">Oferta este extrasă din prezentare și include doar partea de prețuri și opțiuni, fără descrierea generală a locației.</p>
         </div>
         <button class="icon-btn theme-dialog__close" type="button" data-close-school-offer-dialog aria-label="Închide">
           <i data-lucide="x"></i>
@@ -851,7 +839,9 @@
     const openExtrasDialog = document.querySelector('[data-open-extras-dialog]');
     const closeExtrasDialog = document.querySelector('[data-close-extras-dialog]');
     const schoolOfferDialog = document.getElementById('schoolOfferDialog');
-    const openSchoolOfferDialog = document.querySelector('[data-open-school-offer-dialog]');
+    const openSchoolOfferDialogButtons = document.querySelectorAll('[data-open-school-offer-dialog]');
+    const schoolOfferBadge = document.getElementById('schoolOfferBadge');
+    const schoolOfferTitle = document.getElementById('schoolOfferDialogTitle');
     const closeSchoolOfferDialogButtons = document.querySelectorAll('[data-close-school-offer-dialog]');
 
     openCharacterDialog?.addEventListener('click', () => characterDialog?.showModal());
@@ -878,7 +868,17 @@
       }
     });
 
-    openSchoolOfferDialog?.addEventListener('click', () => schoolOfferDialog?.showModal());
+    openSchoolOfferDialogButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (schoolOfferBadge && button.dataset.schoolOfferBadge) {
+          schoolOfferBadge.textContent = button.dataset.schoolOfferBadge;
+        }
+        if (schoolOfferTitle && button.dataset.schoolOfferTitle) {
+          schoolOfferTitle.textContent = button.dataset.schoolOfferTitle;
+        }
+        schoolOfferDialog?.showModal();
+      });
+    });
     closeSchoolOfferDialogButtons.forEach((button) => {
       button.addEventListener('click', () => schoolOfferDialog?.close());
     });
