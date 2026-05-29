@@ -146,6 +146,11 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   max-width: 60ch;
   margin-bottom: var(--space-12);
 }
+@media (min-width: 900px) {
+  .section__head {
+    max-width: 76ch;
+  }
+}
 .section__title { margin-bottom: var(--space-3); }
 .section__lead { font-size: var(--text-lg); color: var(--ink-soft); }
 
