@@ -122,7 +122,7 @@ Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul e
 - **Colaj foto** — patru fotografii mai mici, ușor suprapuse, cu margine albă și umbră, folosite pentru a arăta clar spațiul, părinții, joaca și activitățile.
 - **USP strip** — 4 iconițe + label + meta. 2 coloane pe mobil, 4 pe desktop.
 - **Card eveniment** — image slot, titlu, dată, descriere scurtă, buton. În indoor, cardurile au dată internă și sunt așezate automat cu cel mai recent primul.
-- **Card ofertă școli/grădinițe** — aceleași reguli ca la cardurile de eveniment, dar folosit pentru subcategorii precum serbări și Săptămâna altfel / verde.
+- **Listă ofertă școli/grădinițe** — rânduri compacte, unul sub altul, cu iconiță mică, bulletpointuri și buton discret; nu se folosesc imagini mari în această zonă.
 - **Galerie slideshow** — carusel foto mai compact, cu controale stânga/dreapta și puncte de navigare, folosit pentru mixuri reprezentative de spațiu, activități și petreceri. Imaginile se văd întregi, fără tăieri importante.
 - **Review slideshow** — carusel text pentru opinia clienților, cu stele, text central și controale simple. Se folosește pentru mesaje scurte, ușor de citit, nu pentru paragrafe lungi.
 - **Card pachet** — featured cu border magenta, listă cu checkmarks verde, preț mare, CTA.

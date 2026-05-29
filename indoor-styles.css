@@ -640,6 +640,52 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 @media (min-width: 700px) { .cards--2 { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 900px) { .cards--3 { grid-template-columns: repeat(3, 1fr); } }
 
+/* School offers */
+.school-offers {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 860px;
+}
+.school-offer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  box-shadow: var(--shadow-sm);
+}
+.school-offer__icon {
+  width: 56px;
+  height: 56px;
+  min-height: 56px;
+  border-radius: var(--radius-md);
+}
+.school-offer__icon i,
+.school-offer__icon svg {
+  width: 24px;
+  height: 24px;
+}
+.school-offer__content h3 {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-lg);
+}
+.school-offer__content ul {
+  margin: 0 0 var(--space-4) var(--space-5);
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+.school-offer__content li + li {
+  margin-top: var(--space-1);
+}
+@media (max-width: 560px) {
+  .school-offer {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Package */
 .packages {
   display: grid;
