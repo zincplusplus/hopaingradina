@@ -89,7 +89,7 @@ Le folosim via CDN (`unpkg.com/lucide@latest`), inițializate cu o singură lini
 
 Lucide se potrivește perfect cu brandul: stroke-based, rotunjit, prietenos, neutru cromatic (preia `currentColor`).
 
-Iconițe pe care le folosim acum: `phone`, `mail`, `map-pin`, `clock`, `calendar`, `wifi`, `car-front`, `snowflake`, `shield-check`, `sparkles`, `images`, `cake`, `gift`, `party-popper`, `plus-circle`, `check`, `chevron-left`, `chevron-right`, `menu`, `x`.
+Iconițe pe care le folosim acum: `phone`, `mail`, `map-pin`, `clock`, `calendar`, `wifi`, `car-front`, `snowflake`, `shield-check`, `sparkles`, `images`, `cake`, `chef-hat`, `gift`, `party-popper`, `plus-circle`, `check`, `chevron-left`, `chevron-right`, `menu`, `x`.
 
 ## Voice
 
@@ -121,7 +121,7 @@ Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul e
 - **Hero** — titlu + lead + CTA + image slot pe dreapta. Pe mobil, totul stacked, image slot sub. CTA-ul principal din hero poate fi ușor mai vizibil decât restul butoanelor, cu contur și umbră mai clară.
 - **Colaj foto** — patru fotografii mai mici, ușor suprapuse, cu margine albă și umbră, folosite pentru a arăta clar spațiul, părinții, joaca și activitățile.
 - **USP strip** — 4 iconițe + label + meta. 2 coloane pe mobil, 4 pe desktop.
-- **Card eveniment** — image slot, titlu, dată, descriere scurtă, buton.
+- **Card eveniment** — image slot, titlu, dată, descriere scurtă, buton. În indoor, cardurile au dată internă și sunt așezate automat cu cel mai recent primul.
 - **Galerie slideshow** — carusel foto mai compact, cu controale stânga/dreapta și puncte de navigare, folosit pentru mixuri reprezentative de spațiu, activități și petreceri. Imaginile se văd întregi, fără tăieri importante.
 - **Review slideshow** — carusel text pentru opinia clienților, cu stele, text central și controale simple. Se folosește pentru mesaje scurte, ușor de citit, nu pentru paragrafe lungi.
 - **Card pachet** — featured cu border magenta, listă cu checkmarks verde, preț mare, CTA.

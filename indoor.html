@@ -391,18 +391,18 @@
           <p class="section__lead">Pe lângă petreceri private, organizăm evenimente speciale la care părinții se pot înscrie direct.</p>
         </div>
 
-        <div class="cards cards--3">
-          <article class="card">
-            <div class="card__image image-slot image-slot--pink"><i data-lucide="sparkles"></i></div>
-            <h3 class="card__title">Show interactiv de magie</h3>
-            <div class="card__meta"><i data-lucide="calendar"></i> 21 martie 2026</div>
-            <p class="card__body">Copiii nu sunt doar spectatori — participă activ la trucuri într-un show condus de Magicianul Alex.</p>
+        <div class="cards cards--3" data-events-list>
+          <article class="card" data-event-date="2026-05-24">
+            <div class="card__image image-slot image-slot--sun"><i data-lucide="chef-hat"></i></div>
+            <h3 class="card__title">Târg de jucării / Atelier decorare torturi / Joacă liberă</h3>
+            <div class="card__meta"><i data-lucide="calendar"></i> 24 mai 2026, 15:00–20:00</div>
+            <p class="card__body">Joacă liberă, târg de jucării și atelier creativ în care copiii decorează mini torturi. Atelierul începe la 17:00 și se rezervă separat.</p>
             <div class="card__footer">
-              <a href="#contact" class="btn btn--secondary btn--small">Înscrie copilul</a>
+              <a href="https://hopatopaland.ro/targ-de-jucariiatelier-decorare-torturijoaca-libera" class="btn btn--secondary btn--small">Află mai multe</a>
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-event-date="2026-04-20">
             <div class="card__image image-slot image-slot--green"><i data-lucide="cake"></i></div>
             <h3 class="card__title">Serbare final de an</h3>
             <div class="card__meta"><i data-lucide="calendar"></i> 20 aprilie 2026</div>
@@ -412,7 +412,17 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-event-date="2026-03-21">
+            <div class="card__image image-slot image-slot--pink"><i data-lucide="sparkles"></i></div>
+            <h3 class="card__title">Show interactiv de magie</h3>
+            <div class="card__meta"><i data-lucide="calendar"></i> 21 martie 2026</div>
+            <p class="card__body">Copiii nu sunt doar spectatori — participă activ la trucuri într-un show condus de Magicianul Alex.</p>
+            <div class="card__footer">
+              <a href="#contact" class="btn btn--secondary btn--small">Înscrie copilul</a>
+            </div>
+          </article>
+
+          <article class="card" data-event-date="2026-01-01">
             <div class="card__image image-slot image-slot--sun"><i data-lucide="dog"></i></div>
             <h3 class="card__title">Puppy Play</h3>
             <div class="card__meta"><i data-lucide="party-popper"></i> Temă nouă</div>
@@ -786,6 +796,13 @@
         extrasDialog.close();
       }
     });
+
+    const eventsList = document.querySelector('[data-events-list]');
+    if (eventsList) {
+      Array.from(eventsList.querySelectorAll('[data-event-date]'))
+        .sort((firstEvent, secondEvent) => secondEvent.dataset.eventDate.localeCompare(firstEvent.dataset.eventDate))
+        .forEach((eventCard) => eventsList.appendChild(eventCard));
+    }
 
     const gallery = document.querySelector('[data-gallery-slider]');
     if (gallery) {
