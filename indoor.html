@@ -17,8 +17,9 @@
       </a>
       <nav class="site-nav">
         <a href="#despre">Despre</a>
-        <a href="#evenimente">Evenimente</a>
         <a href="#pachete">Pachete</a>
+        <a href="#oferta-scoli">Școli & grădinițe</a>
+        <a href="#evenimente">Evenimente</a>
         <a href="#galerie">Galerie</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -382,6 +383,86 @@
       </div>
     </dialog>
 
+    <!-- Oferta scoli si gradinite -->
+    <section class="section" id="oferta-scoli">
+      <div class="container">
+        <div class="section__head">
+          <span class="badge"><i data-lucide="school"></i> Școli & grădinițe</span>
+          <h2 class="section__title" style="margin-top: var(--space-3);">Oferte pentru grupuri de copii</h2>
+          <p class="section__lead">Pentru serbări, vizite organizate și programe speciale, pregătim spațiul în exclusivitate și adaptăm activitățile la vârsta copiilor.</p>
+        </div>
+
+        <div class="cards cards--2">
+          <article class="card">
+            <div class="card__image image-slot image-slot--green"><i data-lucide="party-popper"></i></div>
+            <h3 class="card__title">Oferta serbări</h3>
+            <div class="card__meta"><i data-lucide="calendar"></i> În timpul săptămânii</div>
+            <p class="card__body">3 ore de distracție în exclusivitate, scenă cu microfoane și lumini, gustare sănătoasă, băuturi pentru copii și opțiuni extra pentru mâncare, tort și animator.</p>
+            <div class="card__footer">
+              <button class="btn btn--secondary btn--small" type="button" data-open-school-offer-dialog>Vezi oferta</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__image image-slot image-slot--sun"><i data-lucide="leaf"></i></div>
+            <h3 class="card__title">Săptămâna altfel / Săptămâna verde</h3>
+            <div class="card__meta"><i data-lucide="school"></i> Pentru clase și grupe</div>
+            <p class="card__body">Program pentru copii, cu joacă, activități potrivite vârstei și spațiu generos pentru grupuri organizate. Detaliile se stabilesc în funcție de numărul de copii și program.</p>
+            <div class="card__footer">
+              <a href="#contact" class="btn btn--secondary btn--small">Cere detalii</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="theme-dialog" id="schoolOfferDialog" aria-labelledby="schoolOfferDialogTitle">
+      <div class="theme-dialog__head">
+        <div>
+          <span class="badge"><i data-lucide="school"></i> Oferta serbări</span>
+          <h2 class="theme-dialog__title" id="schoolOfferDialogTitle">Serbări pentru școli și grădinițe</h2>
+          <p class="theme-dialog__lead">Oferta este extrasă din prezentare și include doar partea de prețuri și opțiuni, fără descrierea generală a locației.</p>
+        </div>
+        <button class="icon-btn theme-dialog__close" type="button" data-close-school-offer-dialog aria-label="Închide">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="theme-dialog__body">
+        <section class="theme-group">
+          <h3 class="theme-group__title">Pachet Standard copii</h3>
+          <div class="theme-list">
+            <article class="theme-item"><h4>3 ore în exclusivitate</h4><p>Locația este rezervată pentru grupul vostru, cu spațiu de joacă și scenă pregătită pentru serbare.</p></article>
+            <article class="theme-item"><h4>Pregătire pentru eveniment</h4><p>Farfurii, pahare, tacâmuri și șervețele personalizate, plus scenă cu microfoane și lumini.</p></article>
+            <article class="theme-item"><h4>Gustări și băuturi</h4><p>Gustare sănătoasă pentru copii, apă plată nelimitată, limonada lui Țopa, snackuri Maxi Mix și covrigei pentru copii și părinți.</p></article>
+            <article class="theme-item"><h4>Siguranță și acces</h4><p>Clădire cu autorizație ISU și peste 20 de locuri de parcare în curtea interioară.</p></article>
+            <article class="theme-item"><h4>Preț</h4><p>100 lei / copil, minim 10 copii, pentru evenimente organizate în timpul săptămânii.</p></article>
+          </div>
+        </section>
+
+        <section class="theme-group">
+          <h3 class="theme-group__title">Extra pentru copii</h3>
+          <div class="theme-list">
+            <article class="theme-item"><h4>Extra mâncare</h4><p>20 lei / copil: stripsuri de pui cu cartofi prăjiți.</p></article>
+            <article class="theme-item"><h4>Extra tort</h4><p>18 lei / copil: tort personalizat cu poză sau temă, inclusiv momentul tortului cu baloane de săpun.</p></article>
+            <article class="theme-item"><h4>Extra animator</h4><p>35 lei / copil: 1h30 cu personaj la alegere. Pentru grupuri de peste 17 copii sunt incluși 2 animatori.</p></article>
+          </div>
+        </section>
+
+        <section class="theme-group">
+          <h3 class="theme-group__title">Pachete adulți</h3>
+          <div class="theme-list">
+            <article class="theme-item"><h4>Standard - 40 lei / persoană</h4><p>Apă, sucuri din gama Coca-Cola și cafea, 2 băuturi / persoană, plus mix pateuri și sărățele.</p></article>
+            <article class="theme-item"><h4>Premium 1 - 50 lei / adult</h4><p>Apă, sucuri din gama Coca-Cola și cafea, 2 băuturi / persoană, plus mix pizza.</p></article>
+            <article class="theme-item"><h4>Premium 2 - 65 lei / adult</h4><p>Apă, sucuri și cafea, plus platouri mix fingerfood: pui Shanghai, bulete de cașcaval, ciupercuțe gratinate, chifteluțe de pui cu susan, rotocoale de cârnăciori, ficăței înveliți în bacon și opțiuni de post.</p></article>
+            <article class="theme-item"><h4>Personalizare</h4><p>Meniul pentru adulți poate fi personalizat la cerere.</p></article>
+          </div>
+        </section>
+
+        <a href="#contact" class="btn btn--primary" data-close-school-offer-dialog>Solicită oferta</a>
+      </div>
+    </dialog>
+
     <!-- Evenimente -->
     <section class="section" id="evenimente" style="background: var(--paper);">
       <div class="container">
@@ -736,8 +817,9 @@
           <h4>Pagini</h4>
           <ul>
             <li><a href="#despre">Despre</a></li>
-            <li><a href="#evenimente">Evenimente</a></li>
             <li><a href="#pachete">Pachete</a></li>
+            <li><a href="#oferta-scoli">Școli & grădinițe</a></li>
+            <li><a href="#evenimente">Evenimente</a></li>
             <li><a href="#galerie">Galerie</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -772,6 +854,9 @@
     const extrasDialog = document.getElementById('extrasDialog');
     const openExtrasDialog = document.querySelector('[data-open-extras-dialog]');
     const closeExtrasDialog = document.querySelector('[data-close-extras-dialog]');
+    const schoolOfferDialog = document.getElementById('schoolOfferDialog');
+    const openSchoolOfferDialog = document.querySelector('[data-open-school-offer-dialog]');
+    const closeSchoolOfferDialogButtons = document.querySelectorAll('[data-close-school-offer-dialog]');
 
     openCharacterDialog?.addEventListener('click', () => characterDialog?.showModal());
     closeCharacterDialog?.addEventListener('click', () => characterDialog?.close());
@@ -794,6 +879,16 @@
     extrasDialog?.addEventListener('click', (event) => {
       if (event.target === extrasDialog) {
         extrasDialog.close();
+      }
+    });
+
+    openSchoolOfferDialog?.addEventListener('click', () => schoolOfferDialog?.showModal());
+    closeSchoolOfferDialogButtons.forEach((button) => {
+      button.addEventListener('click', () => schoolOfferDialog?.close());
+    });
+    schoolOfferDialog?.addEventListener('click', (event) => {
+      if (event.target === schoolOfferDialog) {
+        schoolOfferDialog.close();
       }
     });
 

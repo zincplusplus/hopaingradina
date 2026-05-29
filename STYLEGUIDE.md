@@ -89,7 +89,7 @@ Le folosim via CDN (`unpkg.com/lucide@latest`), inițializate cu o singură lini
 
 Lucide se potrivește perfect cu brandul: stroke-based, rotunjit, prietenos, neutru cromatic (preia `currentColor`).
 
-Iconițe pe care le folosim acum: `phone`, `mail`, `map-pin`, `clock`, `calendar`, `wifi`, `car-front`, `snowflake`, `shield-check`, `sparkles`, `images`, `cake`, `chef-hat`, `gift`, `party-popper`, `plus-circle`, `check`, `chevron-left`, `chevron-right`, `menu`, `x`.
+Iconițe pe care le folosim acum: `phone`, `mail`, `map-pin`, `clock`, `calendar`, `wifi`, `car-front`, `snowflake`, `shield-check`, `sparkles`, `images`, `cake`, `chef-hat`, `gift`, `party-popper`, `school`, `leaf`, `plus-circle`, `check`, `chevron-left`, `chevron-right`, `menu`, `x`.
 
 ## Voice
 
@@ -122,6 +122,7 @@ Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul e
 - **Colaj foto** — patru fotografii mai mici, ușor suprapuse, cu margine albă și umbră, folosite pentru a arăta clar spațiul, părinții, joaca și activitățile.
 - **USP strip** — 4 iconițe + label + meta. 2 coloane pe mobil, 4 pe desktop.
 - **Card eveniment** — image slot, titlu, dată, descriere scurtă, buton. În indoor, cardurile au dată internă și sunt așezate automat cu cel mai recent primul.
+- **Card ofertă școli/grădinițe** — aceleași reguli ca la cardurile de eveniment, dar folosit pentru subcategorii precum serbări și Săptămâna altfel / verde.
 - **Galerie slideshow** — carusel foto mai compact, cu controale stânga/dreapta și puncte de navigare, folosit pentru mixuri reprezentative de spațiu, activități și petreceri. Imaginile se văd întregi, fără tăieri importante.
 - **Review slideshow** — carusel text pentru opinia clienților, cu stele, text central și controale simple. Se folosește pentru mesaje scurte, ușor de citit, nu pentru paragrafe lungi.
 - **Card pachet** — featured cu border magenta, listă cu checkmarks verde, preț mare, CTA.
@@ -129,6 +130,7 @@ Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul e
 - **Dialog personaje** — pop-up centrat peste pagină, declanșat din pachetul Hopa, cu închidere pe `x` sau click pe fundal.
 - **Dialog teme** — pop-up centrat peste pagină, fundal alb, header crem, închidere cu iconița `x`, liste de teme în blocuri compacte cu imagine scurtă.
 - **Dialog extra opțiuni** — pop-up centrat peste pagină, organizat pe extra opțiuni copii și adulți.
+- **Dialog ofertă serbări** — pop-up centrat peste pagină, pe același model vizual ca dialogul de teme, cu oferta grupată pe copii, extra copii și adulți.
 - **Formular contact** — vertical, label deasupra input-ului, focus magenta.
 - **Footer** — fundal ink, 3 coloane pe desktop.
 
