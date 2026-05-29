@@ -466,6 +466,15 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   gap: var(--space-3);
   flex-wrap: wrap;
 }
+.hero__ctas .btn--primary {
+  border-color: var(--green-dark);
+  box-shadow: var(--shadow-lg);
+  padding-left: var(--space-12);
+  padding-right: var(--space-12);
+}
+.hero__ctas .btn--primary:hover {
+  box-shadow: var(--shadow-lg);
+}
 
 /* Image slot */
 .image-slot {
