@@ -365,7 +365,8 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 }
 .hero__media {
   display: grid;
-  gap: var(--space-3);
+  align-self: start;
+  gap: var(--space-4);
 }
 
 /* Image slot */
@@ -435,6 +436,7 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
     object-fit: contain;
   }
   .garden-cta {
+    justify-self: start;
     max-width: 100%;
     padding: var(--space-2) var(--space-3);
     font-size: var(--text-xs);
