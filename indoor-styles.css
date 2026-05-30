@@ -916,9 +916,19 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   object-fit: cover;
   display: block;
 }
+.theme-item__image--puppy { object-position: 50% 68%; }
+.theme-item__image--tiktok { object-position: 50% 28%; }
 .theme-item h4 {
   margin-bottom: var(--space-2);
   font-size: var(--text-base);
+}
+.theme-item__subtitle {
+  display: block;
+  margin-top: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-soft);
 }
 .theme-item p {
   color: var(--ink-soft);
