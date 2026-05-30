@@ -964,7 +964,7 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   display: block;
 }
 .theme-item__image--puppy { object-position: 50% 68%; }
-.theme-item__image--tiktok { object-position: 50% 28%; }
+.theme-item__image--tiktok { object-position: 50% 32%; }
 .theme-item__image--circus { object-position: 50% 35%; }
 .theme-item__image--profesori { object-position: 50% 34%; }
 .theme-item h4 {
