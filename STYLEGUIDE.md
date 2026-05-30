@@ -119,6 +119,7 @@ Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul e
 
 - **Header plutitor** — logo + nav + telefon + CTA. Pe telefon, meniul rămâne vizibil ca bară orizontală derulabilă sub logo și buton. Sticky, cu blur pe scroll.
 - **Hero** — titlu + lead + CTA + image slot pe dreapta. Pe mobil, totul stacked, image slot sub. CTA-ul principal din hero poate fi ușor mai vizibil decât restul butoanelor, cu contur și umbră mai clară.
+- **Buton Hopa în Grădină peste hero** — mică invitație poziționată în dreapta sus peste fotografia de start din indoor, cu verdele și galbenul locației outdoor, pentru trimitere rapidă spre pagina Mogoșoaia.
 - **Colaj foto** — patru fotografii mai mici, ușor suprapuse, cu margine albă și umbră, folosite pentru a arăta clar spațiul, părinții, joaca și activitățile.
 - **USP strip** — 4 iconițe + label + meta. 2 coloane pe mobil, 4 pe desktop.
 - **Card eveniment** — image slot, titlu, dată, descriere scurtă, buton. În indoor, cardurile au dată internă, sunt așezate automat cu cel mai recent primul și pe pagină apar doar ultimele 3.
