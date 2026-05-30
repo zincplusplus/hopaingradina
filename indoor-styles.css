@@ -688,13 +688,14 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   display: grid;
   gap: var(--space-4);
   max-width: 860px;
+  margin: 0 auto;
 }
 .school-offer {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: var(--space-4);
+  gap: var(--space-6);
   align-items: center;
-  padding: var(--space-5);
+  padding: var(--space-6);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--paper);
@@ -714,6 +715,11 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 .school-offer__content h3 {
   margin-bottom: var(--space-3);
   font-size: var(--text-lg);
+}
+@media (min-width: 760px) {
+  .school-offer {
+    padding: var(--space-8);
+  }
 }
 @media (max-width: 560px) {
   .school-offer {
