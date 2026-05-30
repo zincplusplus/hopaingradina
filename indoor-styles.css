@@ -399,6 +399,15 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 .image-slot--photo { background: var(--paper); }
 .image-slot--square { aspect-ratio: 1 / 1; }
 .image-slot--tall { aspect-ratio: 3 / 4; }
+@media (max-width: 767px) {
+  .hero .image-slot--photo {
+    aspect-ratio: 3 / 2;
+    background: var(--paper);
+  }
+  .hero .image-slot--photo img {
+    object-fit: contain;
+  }
+}
 
 .photo-collage {
   position: relative;
