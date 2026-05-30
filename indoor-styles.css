@@ -148,8 +148,9 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 }
 @media (min-width: 900px) {
   .section__head {
-    max-width: 76ch;
+    max-width: 100%;
   }
+  .section__lead { max-width: 76ch; }
 }
 .section__title { margin-bottom: var(--space-3); }
 .section__lead { font-size: var(--text-lg); color: var(--ink-soft); }

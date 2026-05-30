@@ -890,14 +890,16 @@
 
     const eventsList = document.querySelector('[data-events-list]');
     if (eventsList) {
-      Array.from(eventsList.querySelectorAll('[data-event-date]'))
-        .sort((firstEvent, secondEvent) => secondEvent.dataset.eventDate.localeCompare(firstEvent.dataset.eventDate))
-        .forEach((eventCard, index) => {
-          const isOlderEvent = index >= 3;
-          eventCard.hidden = isOlderEvent;
-          eventCard.setAttribute('aria-hidden', isOlderEvent ? 'true' : 'false');
+      const sortedEvents = Array.from(eventsList.querySelectorAll('[data-event-date]'))
+        .sort((firstEvent, secondEvent) => secondEvent.dataset.eventDate.localeCompare(firstEvent.dataset.eventDate));
+
+      sortedEvents.forEach((eventCard, index) => {
+        if (index < 3) {
           eventsList.appendChild(eventCard);
-        });
+        } else {
+          eventCard.remove();
+        }
+      });
     }
 
     const gallery = document.querySelector('[data-gallery-slider]');
