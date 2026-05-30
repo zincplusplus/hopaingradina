@@ -363,6 +363,10 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   gap: var(--space-3);
   flex-wrap: wrap;
 }
+.hero__media {
+  display: grid;
+  gap: var(--space-3);
+}
 
 /* Image slot */
 .image-slot {
@@ -399,11 +403,8 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 .image-slot--square { aspect-ratio: 1 / 1; }
 .image-slot--tall { aspect-ratio: 3 / 4; }
 .garden-cta {
-  position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
-  z-index: 2;
-  max-width: min(320px, calc(100% - var(--space-8)));
+  justify-self: end;
+  max-width: min(360px, 100%);
   padding: var(--space-3) var(--space-4);
   border: 2px solid var(--garden-green-dark);
   border-radius: var(--radius-md);
@@ -434,9 +435,7 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
     object-fit: contain;
   }
   .garden-cta {
-    top: var(--space-3);
-    right: var(--space-3);
-    max-width: min(240px, calc(100% - var(--space-6)));
+    max-width: 100%;
     padding: var(--space-2) var(--space-3);
     font-size: var(--text-xs);
   }
