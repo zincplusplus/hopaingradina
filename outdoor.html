@@ -55,8 +55,9 @@
         <a href="#despre">Despre noi</a>
         <a href="#oferta">Ofertă</a>
         <a href="#evenimente-scoli-gradinite">Școli și Grădinițe</a>
+        <a href="#oferta-corporate">Oferta corporate</a>
         <a href="#galerie">Galerie</a>
-        <a href="#evenimente">Evenimente</a>
+        <a href="#evenimente">Evenimente viitoare</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="site-header__actions">
@@ -85,8 +86,7 @@
               <i data-lucide="party-popper"></i>
               <span>Evenimente în aer liber</span>
             </div>
-            <h1 class="hero__title">Evenimente în aer liber în Mogoșoaia pentru copii, familii și echipe.</h1>
-            <p class="hero__lead">Hopa în Grădină este un spațiu outdoor pentru aniversări, serbări, petreceri private și evenimente de echipă, creat pentru experiențe relaxate, autentice și fără stres.</p>
+            <h1 class="hero__intro">Petreceri în aer liber în Mogoșoaia pentru copii și adulți. Hopa în Grădină este un spațiu outdoor pentru aniversări, serbări, petreceri private și evenimente de echipă, creat pentru experiențe relaxate, autentice și fără stres.</h1>
             <div class="hero__ctas">
               <a href="#contact" class="btn btn--primary btn--large">
                 <span>Rezervă din timp</span>
@@ -252,7 +252,7 @@
       </div>
     </section>
 
-    <!-- Evenimente -->
+    <!-- Evenimente viitoare -->
     <div id="evenimente" aria-hidden="true"></div>
 
     <!-- Pachete -->
@@ -349,6 +349,12 @@
           </article>
         </div>
 
+        <article class="card custom-offer-card">
+          <span class="badge badge--sun"><i data-lucide="sparkles"></i> Ofertă personalizată</span>
+          <h3 class="card__title" style="margin-top: var(--space-4);">Botezuri, moț și evenimente speciale</h3>
+          <p>Pentru botezuri, tăieri de moț sau alte evenimente speciale, contactează-ne direct. Povestim despre ce îți dorești și pregătim o ofertă personalizată pentru evenimentul tău.</p>
+        </article>
+
         <div class="flex-row" style="justify-content: center; margin-top: var(--space-8);">
           <a href="#contact" class="btn btn--primary">
             <span>Solicită ofertă</span>
@@ -379,6 +385,20 @@
             <span>Săptămâna altfel</span>
           </button>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="oferta-corporate">
+      <div class="container">
+        <div class="section__head">
+          <span class="badge"><i data-lucide="users"></i> Oferta corporate</span>
+          <h2 class="section__title" style="margin-top: var(--space-3);">Oferta corporate</h2>
+        </div>
+
+        <button class="card school-offer-card corporate-offer-card" type="button" data-open-corporate-offer>
+          <i data-lucide="users"></i>
+          <span>Vezi oferta</span>
+        </button>
       </div>
     </section>
 
@@ -542,6 +562,73 @@
       </div>
     </dialog>
 
+    <dialog class="offer-modal" data-corporate-offer-modal aria-labelledby="corporate-offer-title">
+      <div class="offer-modal__inner">
+        <button class="offer-modal__close" type="button" data-close-corporate-offer aria-label="Închide oferta">
+          <i data-lucide="x"></i>
+        </button>
+        <div class="section__head">
+          <span class="badge"><i data-lucide="users"></i> Oferta corporate</span>
+          <h2 class="section__title" id="corporate-offer-title" style="margin-top: var(--space-3);">Evenimente corporate în grădină</h2>
+          <p class="lead">O variantă relaxată pentru echipe, cu spațiu exclusiv, facilități pentru copii și adulți și organizare adaptată evenimentului.</p>
+        </div>
+
+        <div class="cards cards--3" style="margin-top: var(--space-8);">
+          <article class="card">
+            <span class="badge badge--sun"><i data-lucide="party-popper"></i> Facilități copii</span>
+            <h3 class="card__title" style="margin-top: var(--space-4);">Distracție pentru copii, fără plictiseală</h3>
+            <ul class="package__features">
+              <li><i data-lucide="check"></i> Zonă de joacă amenajată special pentru cei mici</li>
+              <li><i data-lucide="check"></i> Trambulină, leagăne și tobogan</li>
+              <li><i data-lucide="check"></i> Loc de joacă cu elemente de escaladă</li>
+              <li><i data-lucide="check"></i> Groapă cu nisip, mingi, motorete și jocuri diverse</li>
+              <li><i data-lucide="check"></i> Spațiu sigur, unde copiii pot alerga și explora liber</li>
+              <li><i data-lucide="check"></i> Mașină de popcorn</li>
+            </ul>
+            <p class="text-muted">Copiii se distrează, iar părinții pot sta liniștiți.</p>
+          </article>
+
+          <article class="package package--featured">
+            <span class="package__badge">Varianta 1</span>
+            <h3 class="package__name">Self Catering</h3>
+            <p class="package__desc">Acces exclusiv la locație, cu mâncare și băutură organizate de tine sau prin furnizori recomandați.</p>
+            <ul class="package__features">
+              <li><i data-lucide="check"></i> Acces exclusiv la toate facilitățile locației</li>
+              <li><i data-lucide="check"></i> Mâncare și băutură Self Catering</li>
+              <li><i data-lucide="check"></i> Recomandare livrare platouri sau catering Siempre Sano</li>
+              <li><i data-lucide="check"></i> Pregătirea locației înainte de eveniment</li>
+              <li><i data-lucide="check"></i> Stand de apă și limonadă nelimitat</li>
+              <li><i data-lucide="check"></i> Persoană dedicată pentru servire, debarasare și suport</li>
+              <li><i data-lucide="check"></i> Consiliere și checklist final</li>
+            </ul>
+            <div class="offer-price">2.190<span>lei / 4 ore</span></div>
+            <p class="text-muted">Toată ziua, 10:00 - 20:00: 3.690 lei. Extra oră: 250 lei/oră, în funcție de disponibilitate.</p>
+          </article>
+
+          <article class="package package--featured">
+            <span class="package__badge">Varianta 2</span>
+            <h3 class="package__name">Cu catering</h3>
+            <p class="package__desc">Variantă potrivită când vrei să te bucuri de eveniment, iar meniul să fie gestionat prin catering.</p>
+            <ul class="package__features">
+              <li><i data-lucide="check"></i> Acces exclusiv la toate facilitățile locației</li>
+              <li><i data-lucide="check"></i> Meniu catering tip bufet cu chelneri și barman</li>
+              <li><i data-lucide="check"></i> Pregătirea locației înainte de eveniment</li>
+              <li><i data-lucide="check"></i> Stand de apă și limonadă nelimitat</li>
+              <li><i data-lucide="check"></i> Consiliere pentru pregătirea evenimentului</li>
+              <li><i data-lucide="check"></i> Checklist final, ca să nu uiți nimic</li>
+            </ul>
+            <div class="offer-price">1.790<span>lei / 4 ore</span></div>
+            <p class="text-muted">Toată ziua, 10:00 - 20:00: 2.990 lei. Extra oră: 250 lei/oră, în funcție de disponibilitate.</p>
+          </article>
+        </div>
+
+        <a href="#contact" class="btn btn--primary" style="margin-top: var(--space-8);" data-close-corporate-offer>
+          <span>Solicită oferta corporate</span>
+          <i data-lucide="chevron-right"></i>
+        </a>
+      </div>
+    </dialog>
+
     <!-- Contact -->
     <section class="section" id="contact" style="background: var(--paper);">
       <div class="container">
@@ -638,8 +725,9 @@
           <h4>Pagini</h4>
           <ul>
             <li><a href="#despre">Despre</a></li>
-            <li><a href="#evenimente">Evenimente</a></li>
+            <li><a href="#evenimente">Evenimente viitoare</a></li>
             <li><a href="#oferta">Ofertă evenimente</a></li>
+            <li><a href="#oferta-corporate">Oferta corporate</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -725,6 +813,7 @@
       wireOfferModal('[data-open-school-offer]', '[data-school-offer-modal]', '[data-close-school-offer]');
       wireOfferModal('[data-open-green-offer]', '[data-green-offer-modal]', '[data-close-green-offer]');
       wireOfferModal('[data-open-altfel-offer]', '[data-altfel-offer-modal]', '[data-close-altfel-offer]');
+      wireOfferModal('[data-open-corporate-offer]', '[data-corporate-offer-modal]', '[data-close-corporate-offer]');
     })();
   </script>
 </body>

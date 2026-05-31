@@ -75,6 +75,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
+  overflow-x: hidden;
 }
 
 body {
@@ -86,6 +87,7 @@ body {
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 img, svg { max-width: 100%; height: auto; display: block; }
@@ -126,6 +128,7 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 
 /* Layout */
 .container {
+  width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-4);
@@ -140,10 +143,13 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 }
 
 .section__head {
-  max-width: 60ch;
+  max-width: min(100%, 82ch);
   margin-bottom: var(--space-12);
 }
-.section__title { margin-bottom: var(--space-3); }
+.section__title {
+  margin-bottom: var(--space-3);
+  text-wrap: pretty;
+}
 .section__lead { font-size: var(--text-lg); color: var(--ink-soft); }
 
 /* Header */
@@ -277,6 +283,7 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   align-items: center;
   gap: var(--space-2);
   margin-left: auto;
+  min-width: 0;
 }
 
 .site-header__cta-stack {
@@ -319,10 +326,31 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   background: #B765D9;
 }
 @media (max-width: 640px) {
+  .site-header__inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .site-header__actions {
+    justify-content: flex-start;
+    justify-self: start;
+    max-width: 100%;
+    margin-left: 0;
+    gap: 0.35rem;
+  }
+  .site-header__cta-stack {
+    max-width: 96px;
+  }
+  .site-nav {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
   .indoor-badge {
-    width: 168px;
+    width: 96px;
     font-size: 0.62rem;
     gap: var(--space-1);
+  }
+  .indoor-badge span {
+    display: none;
   }
   .indoor-badge img {
     width: 34px;
@@ -338,7 +366,7 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
     height: 50px;
   }
   .indoor-badge {
-    width: 144px;
+    width: 88px;
     padding: 0.3rem 0.4rem;
     font-size: 0.56rem;
   }
@@ -434,6 +462,9 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   display: grid;
   gap: var(--space-8);
 }
+.hero__inner > * {
+  min-width: 0;
+}
 @media (min-width: 900px) {
   .hero__inner {
     grid-template-columns: 1.1fr 1fr;
@@ -455,6 +486,17 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 }
 .hero__eyebrow i, .hero__eyebrow svg { width: 16px; height: 16px; }
 .hero__title { margin-bottom: var(--space-4); }
+.hero__intro {
+  width: min(100%, 58ch);
+  margin-bottom: var(--space-8);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0;
+  overflow-wrap: break-word;
+}
 .hero__lead {
   font-size: var(--text-lg);
   color: var(--ink-soft);
@@ -494,6 +536,21 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   object-fit: cover;
 }
 @media (max-width: 640px) {
+  .hero .container {
+    max-width: calc(100vw - (var(--space-4) * 2));
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hero__inner,
+  .hero__inner > div {
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero__intro {
+    width: 100%;
+    max-width: 28ch;
+    font-size: var(--text-lg);
+  }
   .image-slot {
     aspect-ratio: 4 / 3;
     border-radius: var(--radius-md);
@@ -729,6 +786,14 @@ button.school-offer-card:hover {
   border-color: var(--green);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
+}
+.corporate-offer-card {
+  max-width: 420px;
+  margin: 0 auto;
+}
+.custom-offer-card {
+  margin-top: var(--space-8);
+  border: 2px solid var(--sun-soft);
 }
 
 .offer-modal {
