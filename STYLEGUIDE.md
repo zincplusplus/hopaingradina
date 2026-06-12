@@ -117,6 +117,7 @@ Iconițe pe care le folosim acum: `phone`, `mail`, `map-pin`, `clock`, `calendar
 
 Vezi [index.html](index.html) pentru fiecare componentă vizibilă, cu HTML-ul ei.
 
+- **Bară de încrucișare** — bară verde îngustă peste header, cu link către Hopa Topa Land (locația indoor din Colentina) și un buton de închidere (X). Vizitatorul o poate ascunde; alegerea se ține minte în browser, deci nu mai apare la vizitele următoare.
 - **Header plutitor** — logo + nav + telefon + CTA. Pe telefon, meniul rămâne vizibil ca bară orizontală derulabilă sub logo și buton. Sticky, cu blur pe scroll.
 - **Hero** — titlu + lead + CTA + image slot pe dreapta. Pe mobil, totul stacked, image slot sub. CTA-ul principal din hero poate fi ușor mai vizibil decât restul butoanelor, cu contur și umbră mai clară.
 - **Buton Hopa în Grădină peste hero** — mică invitație poziționată în dreapta sus peste fotografia de start din indoor, cu verdele și galbenul locației outdoor, pentru trimitere rapidă spre pagina Mogoșoaia.

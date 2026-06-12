@@ -152,6 +152,89 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
 }
 .section__lead { font-size: var(--text-lg); color: var(--ink-soft); }
 
+/* Topbar - link incrucisat catre Hopa Topa Land */
+.topbar {
+  background: var(--green);
+  color: var(--paper);
+}
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-12) var(--space-2) var(--space-4);
+  position: relative;
+  min-height: 2.5rem;
+  text-align: center;
+}
+.topbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-decoration: none;
+}
+.topbar__link:hover {
+  color: var(--paper);
+  text-decoration: underline;
+}
+.topbar__link img {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  flex: 0 0 auto;
+  background: #B765D9;
+}
+.topbar__arrow, .topbar__arrow svg { width: 16px; height: 16px; flex: 0 0 auto; }
+.topbar__close {
+  position: absolute;
+  top: 50%;
+  right: var(--space-2);
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--paper);
+  cursor: pointer;
+}
+.topbar__close:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+.topbar__close i, .topbar__close svg { width: 18px; height: 18px; }
+@media (max-width: 640px) {
+  .topbar__inner {
+    padding: var(--space-2) var(--space-8) var(--space-2) var(--space-3);
+    gap: var(--space-1);
+  }
+  .topbar__link {
+    font-size: 0.7rem;
+    line-height: 1.25;
+    text-align: left;
+  }
+  .topbar__link img {
+    width: 22px;
+    height: 22px;
+  }
+  .topbar__arrow {
+    display: none;
+  }
+  .topbar__close {
+    right: var(--space-1);
+    width: 28px;
+    height: 28px;
+  }
+  .topbar__close i, .topbar__close svg { width: 16px; height: 16px; }
+}
+
 /* Header */
 .site-header {
   position: sticky;
@@ -286,45 +369,6 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   min-width: 0;
 }
 
-.site-header__cta-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-}
-.indoor-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  width: 230px;
-  padding: 0.35rem 0.55rem;
-  border: 2px solid var(--green-dark);
-  border-radius: var(--radius-md);
-  background: var(--green);
-  color: var(--paper);
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 700;
-  line-height: 1.15;
-  text-align: left;
-  text-decoration: none;
-  box-shadow: var(--shadow-md);
-}
-.indoor-badge:hover {
-  background: var(--green-dark);
-  color: var(--paper);
-  text-decoration: none;
-  transform: translateY(-1px);
-}
-.indoor-badge img {
-  width: 44px;
-  height: 30px;
-  border-radius: var(--radius-sm);
-  object-fit: contain;
-  flex: 0 0 auto;
-  background: #B765D9;
-}
 @media (max-width: 640px) {
   .site-header__inner {
     display: grid;
@@ -337,24 +381,9 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
     margin-left: 0;
     gap: 0.35rem;
   }
-  .site-header__cta-stack {
-    max-width: 96px;
-  }
   .site-nav {
     grid-column: 1 / -1;
     min-width: 0;
-  }
-  .indoor-badge {
-    width: 96px;
-    font-size: 0.62rem;
-    gap: var(--space-1);
-  }
-  .indoor-badge span {
-    display: none;
-  }
-  .indoor-badge img {
-    width: 34px;
-    height: 24px;
   }
 }
 @media (max-width: 380px) {
@@ -364,15 +393,6 @@ a:hover { color: var(--magenta-dark); text-decoration: underline; }
   .site-header__logo img {
     width: 50px;
     height: 50px;
-  }
-  .indoor-badge {
-    width: 88px;
-    padding: 0.3rem 0.4rem;
-    font-size: 0.56rem;
-  }
-  .indoor-badge img {
-    width: 30px;
-    height: 22px;
   }
 }
 

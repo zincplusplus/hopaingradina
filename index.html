@@ -45,6 +45,19 @@
 </head>
 <body>
 
+  <div class="topbar" data-topbar>
+    <div class="container topbar__inner">
+      <a href="https://hopatopaland.ro" target="_blank" rel="noopener" class="topbar__link">
+        <img src="poze/sigla.webp" alt="Hopa Topa Land">
+        <span>Către HOPA TOPA LAND - locație interior Colentina</span>
+        <i data-lucide="chevron-right" class="topbar__arrow"></i>
+      </a>
+      <button class="topbar__close" type="button" data-topbar-close aria-label="Închide acest mesaj">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="index.html" class="site-header__logo">
@@ -64,13 +77,7 @@
         <a href="tel:+40748210054" class="icon-btn" aria-label="Telefon">
           <i data-lucide="phone"></i>
         </a>
-        <div class="site-header__cta-stack">
-          <a href="#contact" class="btn btn--primary btn--small">Rezervă</a>
-          <a href="https://hopatopaland.ro" target="_blank" rel="noopener" class="indoor-badge" aria-label="Vezi locația interioară Hopa Topa Land">
-            <img src="poze/sigla.webp" alt="Hopa Topa Land">
-            <span>Către HOPA TOPA LAND - locație interior Colentina</span>
-          </a>
-        </div>
+        <a href="#contact" class="btn btn--primary btn--small">Rezervă</a>
       </div>
     </div>
   </header>
@@ -729,6 +736,22 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script>
     lucide.createIcons();
+
+    (function () {
+      const topbar = document.querySelector('[data-topbar]');
+      if (!topbar) return;
+
+      const storageKey = 'topbar-hopa-topa-land-dismissed';
+      if (localStorage.getItem(storageKey) === '1') {
+        topbar.remove();
+        return;
+      }
+
+      topbar.querySelector('[data-topbar-close]').addEventListener('click', () => {
+        topbar.remove();
+        localStorage.setItem(storageKey, '1');
+      });
+    })();
 
     (function () {
       const slider = document.querySelector('[data-gallery-slider]');
