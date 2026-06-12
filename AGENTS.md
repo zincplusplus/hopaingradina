@@ -60,6 +60,7 @@ Hopa în Grădină are propriul nume de domeniu, `hopaingradina.ro`. Site-ul sur
 - **Mobile-first.** Scrie CSS pentru mobil, adaugă media queries pentru desktop. Nu invers.
 - **Tokens, nu valori hardcodate.** Toate culorile, font-size-urile, spacing-urile, radius-urile trec prin `var(--...)` din `:root` în `styles.css`. Dacă ai nevoie de o valoare nouă, adaug-o ca token, nu hardcoda.
 - **Imagini lipsă** → slot colorat (`background: var(--color-…)`) cu o iconiță Lucide centrată ca placeholder. Nu inventa URL-uri și nu folosi stock photos.
+- **Imagini reale** → toate intră direct în folderul `poze/`, referite ca `poze/nume-fisier.jpg`. Nu crea foldere temporare sau de lucru (ex. `_import`) pentru poze — dacă vine un fișier nou, pune-l direct în `poze/` cu numele lui final.
 
 ## Când ți se cere ceva ce nu e în styleguide
 
@@ -73,6 +74,7 @@ Dacă ți se cere să construiești ceva care **nu există în ghidul de stil** 
 ## Reguli de cod
 
 - Un singur fișier de stil: `styles.css`. Nu spargem mai departe pe componente.
+- Nu adăuga blocuri `<style>` în fișierele HTML, nici `style="..."` pentru reguli noi. Tot CSS-ul — inclusiv stiluri specifice unei singure pagini (ex. ghidul de stil) — intră în `styles.css`, sub un comentariu care explică unde se folosește.
 - JavaScript doar unde HTML/CSS nu rezolvă (ex: lightbox dacă alegem JS; scroll smooth e deja nativ).
 - HTML semantic: `<header>`, `<main>`, `<section>`, `<nav>`, `<footer>`. Nu `<div>` peste tot.
 - Accesibilitate: `alt` pe imagini, contrast suficient, focus vizibil pe butoane și linkuri.
