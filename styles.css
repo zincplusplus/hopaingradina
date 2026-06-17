@@ -202,40 +202,52 @@ a:hover {
 
 /* Topbar - link incrucisat catre Hopa Topa Land */
 .topbar {
-  background: var(--green);
-  color: var(--paper);
+  background: var(--sun-soft);
+  color: var(--sun-dark);
+  border-bottom: 1px solid var(--border);
 }
 .topbar__inner {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-12) var(--space-2) var(--space-4);
-  position: relative;
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
   min-height: 2.5rem;
   text-align: center;
 }
+.topbar__inner::before {
+  content: "";
+  flex: 0 0 32px;
+}
 .topbar__link {
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 0;
   gap: var(--space-2);
-  color: var(--paper);
-  font-family: var(--font-display);
-  font-weight: 600;
+  color: var(--sun-dark);
+  font-family: var(--font-body);
+  font-weight: 500;
   font-size: var(--text-sm);
   text-decoration: none;
 }
 .topbar__link:hover {
-  color: var(--paper);
+  color: var(--sun-dark);
   text-decoration: underline;
+}
+.topbar__name {
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 .topbar__link img {
   width: 26px;
   height: 26px;
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   object-fit: contain;
   flex: 0 0 auto;
-  background: #b765d9;
+  background: var(--sun-soft);
 }
 .topbar__arrow,
 .topbar__arrow svg {
@@ -244,10 +256,7 @@ a:hover {
   flex: 0 0 auto;
 }
 .topbar__close {
-  position: absolute;
-  top: 50%;
-  right: var(--space-2);
-  transform: translateY(-50%);
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -256,11 +265,11 @@ a:hover {
   border: none;
   border-radius: var(--radius-pill);
   background: transparent;
-  color: var(--paper);
+  color: var(--sun-dark);
   cursor: pointer;
 }
 .topbar__close:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(123, 82, 11, 0.12);
 }
 .topbar__close i,
 .topbar__close svg {
@@ -269,8 +278,14 @@ a:hover {
 }
 @media (max-width: 640px) {
   .topbar__inner {
-    padding: var(--space-2) var(--space-8) var(--space-2) var(--space-3);
     gap: var(--space-1);
+    justify-content: space-between;
+  }
+  .topbar__inner::before {
+    display: none;
+  }
+  .topbar__highlight {
+    display: block;
   }
   .topbar__link {
     font-size: 0.7rem;
@@ -285,7 +300,6 @@ a:hover {
     display: none;
   }
   .topbar__close {
-    right: var(--space-1);
     width: 28px;
     height: 28px;
   }
@@ -413,9 +427,14 @@ a:hover {
 .site-header__actions {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: var(--space-3);
   margin-left: auto;
   min-width: 0;
+}
+.site-header__icons {
+  display: flex;
+  align-items: center;
+  gap: 0;
 }
 .site-header__actions .btn {
   height: 44px;
@@ -432,7 +451,7 @@ a:hover {
     justify-self: end;
     max-width: 100%;
     margin-left: 0;
-    gap: var(--space-1);
+    gap: var(--space-3);
   }
   .site-nav {
     grid-column: 1 / -1;
