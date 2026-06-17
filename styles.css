@@ -413,9 +413,13 @@ a:hover {
 .site-header__actions {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-1);
   margin-left: auto;
   min-width: 0;
+}
+.site-header__actions .btn {
+  height: 44px;
+  min-height: 44px;
 }
 
 @media (max-width: 640px) {
@@ -424,11 +428,11 @@ a:hover {
     grid-template-columns: auto minmax(0, 1fr);
   }
   .site-header__actions {
-    justify-content: flex-start;
-    justify-self: start;
+    justify-content: flex-end;
+    justify-self: end;
     max-width: 100%;
     margin-left: 0;
-    gap: 0.35rem;
+    gap: var(--space-1);
   }
   .site-nav {
     grid-column: 1 / -1;
@@ -449,13 +453,20 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   width: 44px;
   height: 44px;
+  aspect-ratio: 1;
   border-radius: var(--radius-pill);
   background: transparent;
   border: none;
   color: var(--ink);
   text-decoration: none;
+}
+.icon-btn svg,
+.icon-btn img {
+  width: 24px;
+  height: 24px;
 }
 .icon-btn:hover {
   background: var(--green-soft);
